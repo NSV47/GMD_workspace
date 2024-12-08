@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 5 resources" deleteContents="true" description="Delete 5 resources" element1="/gowin_empu_gw1ns2c" element2="/gowin_empu_gw1ns4c" element3="/gowin_empu_m1" element4="/gowin_empu_m3" element5="/gowin_picorv32" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="5" stamp="1679988357160"/>
+</session>

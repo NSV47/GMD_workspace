@@ -1,0 +1,7 @@
+13:46:44 **** Clean-only build of configuration Debug for project gowin_empu_m3 ****
+make clean 
+rm -rf  ./USER/GOWIN_M3_it.o ./USER/main.o ./USER/retarget.o  ./SYSTEM/system_GOWIN_M3.o  ./STARTUP/startup_GOWIN_M3.o  ./PERIPHERAL/Sources/GOWIN_M3_ddr3.o ./PERIPHERAL/Sources/GOWIN_M3_ethernet.o ./PERIPHERAL/Sources/GOWIN_M3_gpio.o ./PERIPHERAL/Sources/GOWIN_M3_i2c.o ./PERIPHERAL/Sources/GOWIN_M3_misc.o ./PERIPHERAL/Sources/GOWIN_M3_rtc.o ./PERIPHERAL/Sources/GOWIN_M3_sdcard.o ./PERIPHERAL/Sources/GOWIN_M3_spi.o ./PERIPHERAL/Sources/GOWIN_M3_spi_flash.o ./PERIPHERAL/Sources/GOWIN_M3_timer.o ./PERIPHERAL/Sources/GOWIN_M3_uart.o ./PERIPHERAL/Sources/GOWIN_M3_wdog.o  ./CORE/core_cm3.o  gowin_empu_m3.bin  gowin_empu_m3.siz  ./STARTUP/startup_GOWIN_M3.d  ./USER/GOWIN_M3_it.d ./USER/main.d ./USER/retarget.d  ./SYSTEM/system_GOWIN_M3.d  ./PERIPHERAL/Sources/GOWIN_M3_ddr3.d ./PERIPHERAL/Sources/GOWIN_M3_ethernet.d ./PERIPHERAL/Sources/GOWIN_M3_gpio.d ./PERIPHERAL/Sources/GOWIN_M3_i2c.d ./PERIPHERAL/Sources/GOWIN_M3_misc.d ./PERIPHERAL/Sources/GOWIN_M3_rtc.d ./PERIPHERAL/Sources/GOWIN_M3_sdcard.d ./PERIPHERAL/Sources/GOWIN_M3_spi.d ./PERIPHERAL/Sources/GOWIN_M3_spi_flash.d ./PERIPHERAL/Sources/GOWIN_M3_timer.d ./PERIPHERAL/Sources/GOWIN_M3_uart.d ./PERIPHERAL/Sources/GOWIN_M3_wdog.d  ./CORE/core_cm3.d  gowin_empu_m3.elf
+ 
+
+13:46:44 Build Finished (took 185ms)
+

@@ -1,0 +1,7 @@
+11:02:38 **** Clean-only build of configuration Debug for project cm1_led ****
+make clean 
+rm -rf  ./USER/GOWIN_M1_it.o ./USER/main.o  ./SYSTEM/system_GOWIN_M1.o  ./STARTUP/startup_GOWIN_M1.o  ./PERIPHERAL/src/GOWIN_M1_can.o ./PERIPHERAL/src/GOWIN_M1_ddr3.o ./PERIPHERAL/src/GOWIN_M1_dualtimer.o ./PERIPHERAL/src/GOWIN_M1_ethernet.o ./PERIPHERAL/src/GOWIN_M1_gpio.o ./PERIPHERAL/src/GOWIN_M1_i2c.o ./PERIPHERAL/src/GOWIN_M1_misc.o ./PERIPHERAL/src/GOWIN_M1_rtc.o ./PERIPHERAL/src/GOWIN_M1_sdcard.o ./PERIPHERAL/src/GOWIN_M1_spi.o ./PERIPHERAL/src/GOWIN_M1_spi_flash.o ./PERIPHERAL/src/GOWIN_M1_timer.o ./PERIPHERAL/src/GOWIN_M1_trng.o ./PERIPHERAL/src/GOWIN_M1_uart.o ./PERIPHERAL/src/GOWIN_M1_wdog.o  cm1_led.bin  cm1_led.siz  ./STARTUP/startup_GOWIN_M1.d  ./USER/GOWIN_M1_it.d ./USER/main.d  ./SYSTEM/system_GOWIN_M1.d  ./PERIPHERAL/src/GOWIN_M1_can.d ./PERIPHERAL/src/GOWIN_M1_ddr3.d ./PERIPHERAL/src/GOWIN_M1_dualtimer.d ./PERIPHERAL/src/GOWIN_M1_ethernet.d ./PERIPHERAL/src/GOWIN_M1_gpio.d ./PERIPHERAL/src/GOWIN_M1_i2c.d ./PERIPHERAL/src/GOWIN_M1_misc.d ./PERIPHERAL/src/GOWIN_M1_rtc.d ./PERIPHERAL/src/GOWIN_M1_sdcard.d ./PERIPHERAL/src/GOWIN_M1_spi.d ./PERIPHERAL/src/GOWIN_M1_spi_flash.d ./PERIPHERAL/src/GOWIN_M1_timer.d ./PERIPHERAL/src/GOWIN_M1_trng.d ./PERIPHERAL/src/GOWIN_M1_uart.d ./PERIPHERAL/src/GOWIN_M1_wdog.d  cm1_led.elf
+ 
+
+11:02:39 Build Finished (took 68ms)
+
