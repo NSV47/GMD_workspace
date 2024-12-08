@@ -1,4 +1,4 @@
-template/main.o: ../template/main.c \
+template/retarget.o: ../template/retarget.c \
  C:\GMD\workspace\test1\test1\lib\CMSIS\DeviceSupport\system/gw1ns4c.h \
  C:\GMD\workspace\test1\test1\lib\CMSIS\CoreSupport\gmd/core_cm3.h \
  C:\GMD\workspace\test1\test1\lib\CMSIS\DeviceSupport\system/system_gw1ns4c.h \

@@ -21,9 +21,9 @@
   	{
   		counter++;
   		printf("GowinFPGA says hi! Count: %d\r\n", counter);
-  		GPIO_ResetBit(GPIO0, GPIO_Pin_0);
+  		GPIO_ResetBit(GPIO0, GPIO_Pin_All);
   		  		delayMillis(500);
-  		  		GPIO_SetBit(GPIO0, GPIO_Pin_0);
+  		  		GPIO_SetBit(GPIO0, GPIO_Pin_All);
   		  		delayMillis(500);
   	}
   }
@@ -33,7 +33,7 @@
     	GPIO_InitTypeDef gpioInitStruct;
 
     	//Select pin7, you can OR pins together to initialize them at the same time
-    	gpioInitStruct.GPIO_Pin = GPIO_Pin_0;
+    	gpioInitStruct.GPIO_Pin = GPIO_Pin_All;
 
     	//Set selected pins as output (see GPIOMode_TypeDef in gw1ns4c_gpio.h)
     	gpioInitStruct.GPIO_Mode = GPIO_Mode_OUT;

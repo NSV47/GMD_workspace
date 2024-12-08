@@ -1,63 +1,46 @@
   /* Includes ------------------------------------------------------------------*/
   #include "gw1ns4c.h"
-  #include <stdio.h>
   /*----------------------------------------------------------------------------*/
 
   /* Declarations*/
   void initializeGPIO();
   void initializeTimer();
   void delayMillis(uint32_t ms);
-  void initializeUART();
 
   int main(void)
   {
   	SystemInit(); //Configures CPU for the defined system clock
   	initializeGPIO();
   	initializeTimer();
-  	initializeUART();
 
-  	uint32_t counter = 0;
+  	//make GPIO pin7 an output pin without relying on the library
+  	//GPIO0 -> OUTENSET |= GPIO_Pin_7;
+
+  	/* Infinite loop */
   	while(1)
   	{
-  		counter++;
-  		printf("GowinFPGA says hi! Count: %d\r\n", counter);
-  		GPIO_ResetBit(GPIO0, GPIO_Pin_0);
-  		  		delayMillis(500);
-  		  		GPIO_SetBit(GPIO0, GPIO_Pin_0);
-  		  		delayMillis(500);
+  		GPIO_ResetBit(GPIO0, GPIO_Pin_All);
+  		delayMillis(100);
+  		GPIO_SetBit(GPIO0, GPIO_Pin_All);
+  		delayMillis(100);
   	}
   }
 
-
   void initializeGPIO() {
-    	GPIO_InitTypeDef gpioInitStruct;
+  	GPIO_InitTypeDef gpioInitStruct;
 
-    	//Select pin7, you can OR pins together to initialize them at the same time
-    	gpioInitStruct.GPIO_Pin = GPIO_Pin_0;
+  	//Select pin7, you can OR pins together to initialize them at the same time
+  	gpioInitStruct.GPIO_Pin = GPIO_Pin_All;
 
-    	//Set selected pins as output (see GPIOMode_TypeDef in gw1ns4c_gpio.h)
-    	gpioInitStruct.GPIO_Mode = GPIO_Mode_OUT;
+  	//Set selected pins as output (see GPIOMode_TypeDef in gw1ns4c_gpio.h)
+  	gpioInitStruct.GPIO_Mode = GPIO_Mode_OUT;
 
-    	//Disable interrupts on selected pins (see GPIOInt_TypeDef)
-    	gpioInitStruct.GPIO_Int = GPIO_Int_Disable;
+  	//Disable interrupts on selected pins (see GPIOInt_TypeDef)
+  	gpioInitStruct.GPIO_Int = GPIO_Int_Disable;
 
-    	//Initialize the GPIO using the configured init struct
-    	//GPIO0 is a pointer containing the memory address of the GPIO APB peripheral
-    	GPIO_Init(GPIO0, &gpioInitStruct);
-    }
-
-  //Initializes UART0
-  void initializeUART()
-  {
-  	UART_InitTypeDef uartInitStruct;
-  	//Enable transmission
-  	uartInitStruct.UART_Mode.UARTMode_Tx = ENABLE;
-  	//Disable reception
-  	uartInitStruct.UART_Mode.UARTMode_Rx = DISABLE;
-  	//9600 baud rate typical of Arduinos
-  	uartInitStruct.UART_BaudRate = 9600;
-  	//Initialize UART0 using the struct configs
-  	UART_Init(UART0, &uartInitStruct);
+  	//Initialize the GPIO using the configured init struct
+  	//GPIO0 is a pointer containing the memory address of the GPIO APB peripheral
+  	GPIO_Init(GPIO0, &gpioInitStruct);
   }
 
   void initializeTimer() {
@@ -78,7 +61,8 @@
   #define CYCLES_PER_MILLISEC (SystemCoreClock / 1000)
   void delayMillis(uint32_t ms) {
   	TIMER_StopTimer(TIMER0);
-  	TIMER_SetValue(TIMER0, 0); //Reset timer just in case it was modified elsewhere
+  	//Reset timer just in case it was modified elsewhere
+  	TIMER_SetValue(TIMER0, 0);
   	TIMER_EnableIRQ(TIMER0);
 
   	uint32_t reloadVal = CYCLES_PER_MILLISEC * ms;

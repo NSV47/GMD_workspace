@@ -4,7 +4,6 @@
   /*----------------------------------------------------------------------------*/
 
   /* Declarations*/
-  void initializeGPIO();
   void initializeTimer();
   void delayMillis(uint32_t ms);
   void initializeUART();
@@ -12,7 +11,6 @@
   int main(void)
   {
   	SystemInit(); //Configures CPU for the defined system clock
-  	initializeGPIO();
   	initializeTimer();
   	initializeUART();
 
@@ -20,31 +18,10 @@
   	while(1)
   	{
   		counter++;
-  		printf("GowinFPGA says hi! Count: %d\r\n", counter);
-  		GPIO_ResetBit(GPIO0, GPIO_Pin_0);
-  		  		delayMillis(500);
-  		  		GPIO_SetBit(GPIO0, GPIO_Pin_0);
-  		  		delayMillis(500);
+  		printf("/r/GowinFPGA says hi! Count: %d\n", counter);
+  		delayMillis(1000);
   	}
   }
-
-
-  void initializeGPIO() {
-    	GPIO_InitTypeDef gpioInitStruct;
-
-    	//Select pin7, you can OR pins together to initialize them at the same time
-    	gpioInitStruct.GPIO_Pin = GPIO_Pin_0;
-
-    	//Set selected pins as output (see GPIOMode_TypeDef in gw1ns4c_gpio.h)
-    	gpioInitStruct.GPIO_Mode = GPIO_Mode_OUT;
-
-    	//Disable interrupts on selected pins (see GPIOInt_TypeDef)
-    	gpioInitStruct.GPIO_Int = GPIO_Int_Disable;
-
-    	//Initialize the GPIO using the configured init struct
-    	//GPIO0 is a pointer containing the memory address of the GPIO APB peripheral
-    	GPIO_Init(GPIO0, &gpioInitStruct);
-    }
 
   //Initializes UART0
   void initializeUART()
