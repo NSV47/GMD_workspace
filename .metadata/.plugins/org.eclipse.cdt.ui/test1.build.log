@@ -1,4 +1,4 @@
-20:14:32 **** Incremental Build of configuration Debug for project test1 ****
+22:59:57 **** Incremental Build of configuration Debug for project test1 ****
 make all 
 Building file: ../template/main.c
 Invoking: GNU ARM Cross C Compiler
@@ -17,9 +17,9 @@ Finished building: test1.bin
 Invoking: GNU ARM Cross Print Size
 arm-none-eabi-size --format=berkeley "test1.elf"
    text	   data	    bss	    dec	    hex	filename
-  26445	   2496	     96	  29037	   716d	test1.elf
+  26461	   2496	     96	  29053	   717d	test1.elf
 Finished building: test1.siz
  
 
-20:14:34 Build Finished (took 1s.608ms)
+22:59:58 Build Finished (took 668ms)
 

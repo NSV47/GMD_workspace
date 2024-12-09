@@ -1,0 +1,95 @@
+15:25:34 **** Build of configuration Debug for project gowin_empu_gw1ns4c ****
+make all 
+Building file: ../USER/gw1ns4c_it.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\GMD\workspace\gowin_empu_gw1ns4c\CORE" -I"C:\GMD\workspace\gowin_empu_gw1ns4c\PERIPHERAL\Includes" -I"C:\GMD\workspace\gowin_empu_gw1ns4c\SYSTEM" -I"C:\GMD\workspace\gowin_empu_gw1ns4c\USER" -std=gnu11 -MMD -MP -MF"USER/gw1ns4c_it.d" -MT"USER/gw1ns4c_it.o" -c -o "USER/gw1ns4c_it.o" "../USER/gw1ns4c_it.c"
+Finished building: ../USER/gw1ns4c_it.c
+ 
+Building file: ../USER/main.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\GMD\workspace\gowin_empu_gw1ns4c\CORE" -I"C:\GMD\workspace\gowin_empu_gw1ns4c\PERIPHERAL\Includes" -I"C:\GMD\workspace\gowin_empu_gw1ns4c\SYSTEM" -I"C:\GMD\workspace\gowin_empu_gw1ns4c\USER" -std=gnu11 -MMD -MP -MF"USER/main.d" -MT"USER/main.o" -c -o "USER/main.o" "../USER/main.c"
+Finished building: ../USER/main.c
+ 
+Building file: ../USER/retarget.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\GMD\workspace\gowin_empu_gw1ns4c\CORE" -I"C:\GMD\workspace\gowin_empu_gw1ns4c\PERIPHERAL\Includes" -I"C:\GMD\workspace\gowin_empu_gw1ns4c\SYSTEM" -I"C:\GMD\workspace\gowin_empu_gw1ns4c\USER" -std=gnu11 -MMD -MP -MF"USER/retarget.d" -MT"USER/retarget.o" -c -o "USER/retarget.o" "../USER/retarget.c"
+Finished building: ../USER/retarget.c
+ 
+Building file: ../SYSTEM/system_gw1ns4c.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\GMD\workspace\gowin_empu_gw1ns4c\CORE" -I"C:\GMD\workspace\gowin_empu_gw1ns4c\PERIPHERAL\Includes" -I"C:\GMD\workspace\gowin_empu_gw1ns4c\SYSTEM" -I"C:\GMD\workspace\gowin_empu_gw1ns4c\USER" -std=gnu11 -MMD -MP -MF"SYSTEM/system_gw1ns4c.d" -MT"SYSTEM/system_gw1ns4c.o" -c -o "SYSTEM/system_gw1ns4c.o" "../SYSTEM/system_gw1ns4c.c"
+Finished building: ../SYSTEM/system_gw1ns4c.c
+ 
+Building file: ../STARTUP/startup_gw1ns4c.S
+Invoking: GNU ARM Cross Assembler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -x assembler-with-cpp -D__STARTUP_CLEAR_BSS -MMD -MP -MF"STARTUP/startup_gw1ns4c.d" -MT"STARTUP/startup_gw1ns4c.o" -c -o "STARTUP/startup_gw1ns4c.o" "../STARTUP/startup_gw1ns4c.S"
+Finished building: ../STARTUP/startup_gw1ns4c.S
+ 
+Building file: ../PERIPHERAL/Sources/gw1ns4c_gpio.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\GMD\workspace\gowin_empu_gw1ns4c\CORE" -I"C:\GMD\workspace\gowin_empu_gw1ns4c\PERIPHERAL\Includes" -I"C:\GMD\workspace\gowin_empu_gw1ns4c\SYSTEM" -I"C:\GMD\workspace\gowin_empu_gw1ns4c\USER" -std=gnu11 -MMD -MP -MF"PERIPHERAL/Sources/gw1ns4c_gpio.d" -MT"PERIPHERAL/Sources/gw1ns4c_gpio.o" -c -o "PERIPHERAL/Sources/gw1ns4c_gpio.o" "../PERIPHERAL/Sources/gw1ns4c_gpio.c"
+Finished building: ../PERIPHERAL/Sources/gw1ns4c_gpio.c
+ 
+Building file: ../PERIPHERAL/Sources/gw1ns4c_i2c.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\GMD\workspace\gowin_empu_gw1ns4c\CORE" -I"C:\GMD\workspace\gowin_empu_gw1ns4c\PERIPHERAL\Includes" -I"C:\GMD\workspace\gowin_empu_gw1ns4c\SYSTEM" -I"C:\GMD\workspace\gowin_empu_gw1ns4c\USER" -std=gnu11 -MMD -MP -MF"PERIPHERAL/Sources/gw1ns4c_i2c.d" -MT"PERIPHERAL/Sources/gw1ns4c_i2c.o" -c -o "PERIPHERAL/Sources/gw1ns4c_i2c.o" "../PERIPHERAL/Sources/gw1ns4c_i2c.c"
+Finished building: ../PERIPHERAL/Sources/gw1ns4c_i2c.c
+ 
+Building file: ../PERIPHERAL/Sources/gw1ns4c_misc.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\GMD\workspace\gowin_empu_gw1ns4c\CORE" -I"C:\GMD\workspace\gowin_empu_gw1ns4c\PERIPHERAL\Includes" -I"C:\GMD\workspace\gowin_empu_gw1ns4c\SYSTEM" -I"C:\GMD\workspace\gowin_empu_gw1ns4c\USER" -std=gnu11 -MMD -MP -MF"PERIPHERAL/Sources/gw1ns4c_misc.d" -MT"PERIPHERAL/Sources/gw1ns4c_misc.o" -c -o "PERIPHERAL/Sources/gw1ns4c_misc.o" "../PERIPHERAL/Sources/gw1ns4c_misc.c"
+Finished building: ../PERIPHERAL/Sources/gw1ns4c_misc.c
+ 
+Building file: ../PERIPHERAL/Sources/gw1ns4c_rtc.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\GMD\workspace\gowin_empu_gw1ns4c\CORE" -I"C:\GMD\workspace\gowin_empu_gw1ns4c\PERIPHERAL\Includes" -I"C:\GMD\workspace\gowin_empu_gw1ns4c\SYSTEM" -I"C:\GMD\workspace\gowin_empu_gw1ns4c\USER" -std=gnu11 -MMD -MP -MF"PERIPHERAL/Sources/gw1ns4c_rtc.d" -MT"PERIPHERAL/Sources/gw1ns4c_rtc.o" -c -o "PERIPHERAL/Sources/gw1ns4c_rtc.o" "../PERIPHERAL/Sources/gw1ns4c_rtc.c"
+Finished building: ../PERIPHERAL/Sources/gw1ns4c_rtc.c
+ 
+Building file: ../PERIPHERAL/Sources/gw1ns4c_spi.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\GMD\workspace\gowin_empu_gw1ns4c\CORE" -I"C:\GMD\workspace\gowin_empu_gw1ns4c\PERIPHERAL\Includes" -I"C:\GMD\workspace\gowin_empu_gw1ns4c\SYSTEM" -I"C:\GMD\workspace\gowin_empu_gw1ns4c\USER" -std=gnu11 -MMD -MP -MF"PERIPHERAL/Sources/gw1ns4c_spi.d" -MT"PERIPHERAL/Sources/gw1ns4c_spi.o" -c -o "PERIPHERAL/Sources/gw1ns4c_spi.o" "../PERIPHERAL/Sources/gw1ns4c_spi.c"
+Finished building: ../PERIPHERAL/Sources/gw1ns4c_spi.c
+ 
+Building file: ../PERIPHERAL/Sources/gw1ns4c_syscon.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\GMD\workspace\gowin_empu_gw1ns4c\CORE" -I"C:\GMD\workspace\gowin_empu_gw1ns4c\PERIPHERAL\Includes" -I"C:\GMD\workspace\gowin_empu_gw1ns4c\SYSTEM" -I"C:\GMD\workspace\gowin_empu_gw1ns4c\USER" -std=gnu11 -MMD -MP -MF"PERIPHERAL/Sources/gw1ns4c_syscon.d" -MT"PERIPHERAL/Sources/gw1ns4c_syscon.o" -c -o "PERIPHERAL/Sources/gw1ns4c_syscon.o" "../PERIPHERAL/Sources/gw1ns4c_syscon.c"
+Finished building: ../PERIPHERAL/Sources/gw1ns4c_syscon.c
+ 
+Building file: ../PERIPHERAL/Sources/gw1ns4c_timer.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\GMD\workspace\gowin_empu_gw1ns4c\CORE" -I"C:\GMD\workspace\gowin_empu_gw1ns4c\PERIPHERAL\Includes" -I"C:\GMD\workspace\gowin_empu_gw1ns4c\SYSTEM" -I"C:\GMD\workspace\gowin_empu_gw1ns4c\USER" -std=gnu11 -MMD -MP -MF"PERIPHERAL/Sources/gw1ns4c_timer.d" -MT"PERIPHERAL/Sources/gw1ns4c_timer.o" -c -o "PERIPHERAL/Sources/gw1ns4c_timer.o" "../PERIPHERAL/Sources/gw1ns4c_timer.c"
+Finished building: ../PERIPHERAL/Sources/gw1ns4c_timer.c
+ 
+Building file: ../PERIPHERAL/Sources/gw1ns4c_uart.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\GMD\workspace\gowin_empu_gw1ns4c\CORE" -I"C:\GMD\workspace\gowin_empu_gw1ns4c\PERIPHERAL\Includes" -I"C:\GMD\workspace\gowin_empu_gw1ns4c\SYSTEM" -I"C:\GMD\workspace\gowin_empu_gw1ns4c\USER" -std=gnu11 -MMD -MP -MF"PERIPHERAL/Sources/gw1ns4c_uart.d" -MT"PERIPHERAL/Sources/gw1ns4c_uart.o" -c -o "PERIPHERAL/Sources/gw1ns4c_uart.o" "../PERIPHERAL/Sources/gw1ns4c_uart.c"
+Finished building: ../PERIPHERAL/Sources/gw1ns4c_uart.c
+ 
+Building file: ../PERIPHERAL/Sources/gw1ns4c_wdog.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\GMD\workspace\gowin_empu_gw1ns4c\CORE" -I"C:\GMD\workspace\gowin_empu_gw1ns4c\PERIPHERAL\Includes" -I"C:\GMD\workspace\gowin_empu_gw1ns4c\SYSTEM" -I"C:\GMD\workspace\gowin_empu_gw1ns4c\USER" -std=gnu11 -MMD -MP -MF"PERIPHERAL/Sources/gw1ns4c_wdog.d" -MT"PERIPHERAL/Sources/gw1ns4c_wdog.o" -c -o "PERIPHERAL/Sources/gw1ns4c_wdog.o" "../PERIPHERAL/Sources/gw1ns4c_wdog.c"
+Finished building: ../PERIPHERAL/Sources/gw1ns4c_wdog.c
+ 
+Building file: ../CORE/core_cm3.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\GMD\workspace\gowin_empu_gw1ns4c\CORE" -I"C:\GMD\workspace\gowin_empu_gw1ns4c\PERIPHERAL\Includes" -I"C:\GMD\workspace\gowin_empu_gw1ns4c\SYSTEM" -I"C:\GMD\workspace\gowin_empu_gw1ns4c\USER" -std=gnu11 -MMD -MP -MF"CORE/core_cm3.d" -MT"CORE/core_cm3.o" -c -o "CORE/core_cm3.o" "../CORE/core_cm3.c"
+Finished building: ../CORE/core_cm3.c
+ 
+Building target: gowin_empu_gw1ns4c.elf
+Invoking: GNU ARM Cross C Linker
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:\GMD\workspace\gowin_empu_gw1ns4c\gw1ns4c_flash.ld" -Xlinker --gc-sections -Wl,-Map,"gowin_empu_gw1ns4c.map" -o "gowin_empu_gw1ns4c.elf"  ./USER/gw1ns4c_it.o ./USER/main.o ./USER/retarget.o  ./SYSTEM/system_gw1ns4c.o  ./STARTUP/startup_gw1ns4c.o  ./PERIPHERAL/Sources/gw1ns4c_gpio.o ./PERIPHERAL/Sources/gw1ns4c_i2c.o ./PERIPHERAL/Sources/gw1ns4c_misc.o ./PERIPHERAL/Sources/gw1ns4c_rtc.o ./PERIPHERAL/Sources/gw1ns4c_spi.o ./PERIPHERAL/Sources/gw1ns4c_syscon.o ./PERIPHERAL/Sources/gw1ns4c_timer.o ./PERIPHERAL/Sources/gw1ns4c_uart.o ./PERIPHERAL/Sources/gw1ns4c_wdog.o  ./CORE/core_cm3.o   
+Finished building target: gowin_empu_gw1ns4c.elf
+ 
+Invoking: GNU ARM Cross Create Flash Image
+arm-none-eabi-objcopy -O binary "gowin_empu_gw1ns4c.elf"  "gowin_empu_gw1ns4c.bin"
+Finished building: gowin_empu_gw1ns4c.bin
+ 
+Invoking: GNU ARM Cross Print Size
+arm-none-eabi-size --format=berkeley "gowin_empu_gw1ns4c.elf"
+   text	   data	    bss	    dec	    hex	filename
+   8736	   2132	     96	  10964	   2ad4	gowin_empu_gw1ns4c.elf
+Finished building: gowin_empu_gw1ns4c.siz
+ 
+
+15:25:39 Build Finished (took 4s.547ms)
+

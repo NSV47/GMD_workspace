@@ -1,52 +1,89 @@
-  /* Includes ------------------------------------------------------------------*/
-  #include "gw1ns4c.h"
-  #include <stdio.h>
-  /*----------------------------------------------------------------------------*/
 
-  /* Declarations*/
-  void initializeGPIO();
-  void initializeTimer();
-  void delayMillis(uint32_t ms);
-  void initializeUART();
+/*
+ * *****************************************************************************************
+ *
+ * 		Copyright (C) 2014-2021 Gowin Semiconductor Technology Co.,Ltd.
+ *
+ * @file			main.c
+ * @author		Embedded Development Team
+ * @version		V1.x.x
+ * @date			2021-01-01 09:00:00
+ * @brief			Main program body.
+ ******************************************************************************************
+ */
 
-  int main(void)
+/* Includes ------------------------------------------------------------------*/
+#include "gw1ns4c.h"
+#include <stdio.h>
+
+/* Includes ------------------------------------------------------------------*/
+void SPIInit(void);
+void initializeUART();
+void initializeTimer();
+void delayMillis(uint32_t ms);
+
+/* Functions ------------------------------------------------------------------*/
+int main(void)
+{
+  SystemInit();		//Initializes system
+  SPIInit();			//Initializes SPI
+  initializeUART();
+//  initializeTimer();
+
+  SPI_Select_Slave(0x01) ;	//Select The SPI Slave
+  SPI_WriteData(0x01);			//Send Jedec
+
+  printf("init complete\r\n");
+
+  uint32_t counter = 0;
+
+  while(1)
   {
-  	SystemInit(); //Configures CPU for the defined system clock
-  	initializeGPIO();
-  	initializeTimer();
-  	initializeUART();
 
-  	uint32_t counter = 0;
-  	while(1)
-  	{
-  		counter++;
-  		printf("GowinFPGA says hi! Count: %d\r\n", counter);
-  		GPIO_ResetBit(GPIO0, GPIO_Pin_0);
-  		  		delayMillis(500);
-  		  		GPIO_SetBit(GPIO0, GPIO_Pin_0);
-  		  		delayMillis(500);
-  	}
+      counter++;
+	  printf("GowinFPGA says hi! Count: %d\r\n", counter);
+#if 1
+	  if(~SPI_GetToeStatus() && SPI_GetTrdyStatus() == 1)
+	  {
+	      SPI_WriteData(0x81);//Send Jedec
+	  }
+#endif
+
+	  delayMillis(500);
+
+#if 1
+	  if(~SPI_GetRoeStatus() && SPI_GetRrdyStatus() == 1)
+	  {
+//	      UART_SendChar(UART0,SPI_ReadData());
+		  char value = SPI_ReadData();
+		  printf("value: %c\r\n", value);
+	  }
+#endif
+	  delayMillis(500);
+#if 1
+	  if(~SPI_GetToeStatus() && SPI_GetTrdyStatus() == 1)
+	  {
+		  SPI_WriteData(0x01);//Send Jedec
+	  }
+#endif
+	  delayMillis(500);
   }
+}
 
+//Initializes SPI
+void SPIInit(void)
+{
+	SPI_InitTypeDef init_spi;
 
-  void initializeGPIO() {
-    	GPIO_InitTypeDef gpioInitStruct;
+  init_spi.CLKSEL= CLKSEL_CLK_DIV_6;		//80MHZ / 8
+  init_spi.DIRECTION = DISABLE;					//MSB First
+  init_spi.PHASE =DISABLE;							//ENABLE;//posedge
+  init_spi.POLARITY =DISABLE;						//polarity 0
 
-    	//Select pin7, you can OR pins together to initialize them at the same time
-    	gpioInitStruct.GPIO_Pin = GPIO_Pin_0;
+  SPI_Init(&init_spi);
+}
 
-    	//Set selected pins as output (see GPIOMode_TypeDef in gw1ns4c_gpio.h)
-    	gpioInitStruct.GPIO_Mode = GPIO_Mode_OUT;
-
-    	//Disable interrupts on selected pins (see GPIOInt_TypeDef)
-    	gpioInitStruct.GPIO_Int = GPIO_Int_Disable;
-
-    	//Initialize the GPIO using the configured init struct
-    	//GPIO0 is a pointer containing the memory address of the GPIO APB peripheral
-    	GPIO_Init(GPIO0, &gpioInitStruct);
-    }
-
-  //Initializes UART0
+//Initializes UART0
   void initializeUART()
   {
   	UART_InitTypeDef uartInitStruct;
@@ -61,35 +98,35 @@
   }
 
   void initializeTimer() {
-  	TIMER_InitTypeDef timerInitStruct;
+    	TIMER_InitTypeDef timerInitStruct;
 
-  	timerInitStruct.Reload = 0;
+    	timerInitStruct.Reload = 0;
 
-  	//Disable interrupt requests from timer for now
-  	timerInitStruct.TIMER_Int = DISABLE;
+    	//Disable interrupt requests from timer for now
+    	timerInitStruct.TIMER_Int = DISABLE;
 
-  	//Disable timer enabling/clocking from external pins (GPIO)
-  	timerInitStruct.TIMER_Exti = TIMER_DISABLE;
+    	//Disable timer enabling/clocking from external pins (GPIO)
+    	timerInitStruct.TIMER_Exti = TIMER_DISABLE;
 
-  	TIMER_Init(TIMER0, &timerInitStruct);
-  	TIMER_StopTimer(TIMER0);
-  }
+    	TIMER_Init(TIMER0, &timerInitStruct);
+    	TIMER_StopTimer(TIMER0);
+    }
 
-  #define CYCLES_PER_MILLISEC (SystemCoreClock / 1000)
-  void delayMillis(uint32_t ms) {
-  	TIMER_StopTimer(TIMER0);
-  	TIMER_SetValue(TIMER0, 0); //Reset timer just in case it was modified elsewhere
-  	TIMER_EnableIRQ(TIMER0);
+    #define CYCLES_PER_MILLISEC (SystemCoreClock / 1000)
+    void delayMillis(uint32_t ms) {
+    	TIMER_StopTimer(TIMER0);
+    	TIMER_SetValue(TIMER0, 0); //Reset timer just in case it was modified elsewhere
+    	TIMER_EnableIRQ(TIMER0);
 
-  	uint32_t reloadVal = CYCLES_PER_MILLISEC * ms;
-  	//Timer interrupt will trigger when it reaches the reload value
-  	TIMER_SetReload(TIMER0, reloadVal);
+    	uint32_t reloadVal = CYCLES_PER_MILLISEC * ms;
+    	//Timer interrupt will trigger when it reaches the reload value
+    	TIMER_SetReload(TIMER0, reloadVal);
 
-  	TIMER_StartTimer(TIMER0);
-  	//Block execution until timer wastes the calculated amount of cycles
-  	while (TIMER_GetIRQStatus(TIMER0) != SET);
+    	TIMER_StartTimer(TIMER0);
+    	//Block execution until timer wastes the calculated amount of cycles
+    	while (TIMER_GetIRQStatus(TIMER0) != SET);
 
-  	TIMER_StopTimer(TIMER0);
-  	TIMER_ClearIRQ(TIMER0);
-  	TIMER_SetValue(TIMER0, 0);
-  }
+    	TIMER_StopTimer(TIMER0);
+    	TIMER_ClearIRQ(TIMER0);
+    	TIMER_SetValue(TIMER0, 0);
+    }

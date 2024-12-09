@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="License Contents dialog setting">
+		<item value="352" key="DIALOG_WIDTH"/>
+		<item value="1|微软雅黑|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|微软雅黑" key="DIALOG_FONT_NAME"/>
+		<item value="224" key="DIALOG_HEIGHT"/>
+		<item value="792" key="DIALOG_X_ORIGIN"/>
+		<item value="379" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="License Contents dialog setting section">
+		<item value="600" key="DIALOG_WIDTH"/>
+		<item value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI" key="DIALOG_FONT_NAME"/>
+		<item value="C:\GMD\license\gowin_mcu_70B5E839FCAF.lic" key="checkDialog.stored license file name"/>
+		<item value="C:\GMD\license\gowin_mcu_70B5E839FCAF.lic" key="license checkDialog.STORE_FILE_MRU0"/>
+		<item value="D:\gmd_develop\GMD_plugins\gowin_GMD_8CEC4BB4B9F6.lic" key="license checkDialog.STORE_FILE_MRU1"/>
+		<item value="425" key="DIALOG_HEIGHT"/>
+		<item value="0" key="DIALOG_X_ORIGIN"/>
+		<item value="0" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>
