@@ -1,4 +1,4 @@
-21:03:14 **** Incremental Build of configuration Debug for project test1 ****
+21:34:39 **** Incremental Build of configuration Debug for project test1 ****
 make all 
 Invoking: GNU ARM Cross Print Size
 arm-none-eabi-size --format=berkeley "test1.elf"
