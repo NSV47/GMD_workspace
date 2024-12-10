@@ -15,6 +15,8 @@
 /* Includes ------------------------------------------------------------------*/
 #include "gw1ns4c.h"
 #include <stdio.h>
+#include <hfbeacon.h>
+#include "main.h"
 
 /* Includes ------------------------------------------------------------------*/
 void SPIInit(void);
@@ -25,10 +27,12 @@ void delayMillis(uint32_t ms);
 /* Functions ------------------------------------------------------------------*/
 int main(void)
 {
-  SystemInit();		//Initializes system
+
+
+	SystemInit();		//Initializes system
   SPIInit();			//Initializes SPI
   initializeUART();
-  initializeTimer();
+//  initializeTimer();
 
   SPI_Select_Slave(0x01) ;	//Select The SPI Slave
   SPI_WriteData(0x01);			//Send Jedec
@@ -39,7 +43,13 @@ int main(void)
 
   while(1)
   {
-
+	  /*
+	  	 * Что, если в бесконечном цикле постоянно проверять не изменилось ли значение
+	  	 * частоты или фазы (как с опросом кнопки). И если изменилось то передавать по SPI.
+	  	 * А еще надо поместить это в функцию проверки, чтобы её ещё можно было
+	  	 * вызывать принудительно
+	  	 *
+	  	 * */
       counter++;
 	  printf("GowinFPGA says hi! Count: %d\r\n", counter);
 #if 1

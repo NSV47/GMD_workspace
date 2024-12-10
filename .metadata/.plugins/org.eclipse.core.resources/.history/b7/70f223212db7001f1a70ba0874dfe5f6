@@ -15,6 +15,8 @@
 /* Includes ------------------------------------------------------------------*/
 #include "gw1ns4c.h"
 #include <stdio.h>
+#include <hfbeacon.h>
+#include "main.h"
 
 /* Includes ------------------------------------------------------------------*/
 void SPIInit(void);
@@ -28,7 +30,7 @@ int main(void)
   SystemInit();		//Initializes system
   SPIInit();			//Initializes SPI
   initializeUART();
-  initializeTimer();
+//  initializeTimer();
 
   SPI_Select_Slave(0x01) ;	//Select The SPI Slave
   SPI_WriteData(0x01);			//Send Jedec

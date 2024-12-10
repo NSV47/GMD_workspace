@@ -1,0 +1,9 @@
+#ifndef MAIN_H
+#define MAIN_H
+
+struct Gen{
+	uint32_t freq;
+	uint32_t phase;
+};
+
+#endif /* MAIN_H */
