@@ -1,7 +1,0 @@
-11:02:39 **** Clean-only build of configuration Debug for project demo-uart-V0 ****
-make clean 
-rm -rf  ./src/custom_ops.o ./src/firmware.o ./src/irq.o ./src/main.o ./src/printf.o ./src/simpleuart.o ./src/start.o ./src/wbi2c.o ./src/wbspi.o ./src/wbuart.o  demo-uart-V0.bin  demo-uart-V0.lst  demo-uart-V0.siz  ./src/custom_ops.d ./src/start.d  ./src/firmware.d ./src/irq.d ./src/main.d ./src/printf.d ./src/simpleuart.d ./src/wbi2c.d ./src/wbspi.d ./src/wbuart.d  demo-uart-V0.elf
- 
-
-11:02:39 Build Finished (took 67ms)
-
