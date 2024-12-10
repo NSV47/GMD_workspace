@@ -16,9 +16,10 @@
 #define HFBEACON_H
 
 #include <stdbool.h>
-#include "main.h"
+#include <ctype.h>
+#include <stdio.h>
 
-#if 0
+#if 1
 struct Gen{
 	uint32_t freq;
 	uint32_t phase;
@@ -41,7 +42,8 @@ void pskIdle(long freqIdle, int baudsIdle, struct Gen*); // , AD9833*
 void rttyTxByte (long freqRttyTxbyte, char c);
 
 uint8_t parity(unsigned long tempo);
-uint8_t rsidTxEnable;
+
+//uint8_t rsidTxEnable = 0;
 
 //extern HFBEACON Beacon;
 

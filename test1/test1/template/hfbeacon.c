@@ -16,8 +16,6 @@
 
 //HFBEACON Beacon;
 
-rsidTxEnable = 0;
-
 #if 0
 HFBEACON::HFBEACON(){
  rsidTxEnable = 0;
@@ -52,6 +50,7 @@ void ddsPower(int powDds, AD9833 *genPtr){
 /********************************************************
  * RSID
  ********************************************************/
+#if 0 // эта функция ни чем не используется
 void rsidToggle(bool rsidEnable){
  if(rsidEnable == true)
  {
@@ -62,90 +61,106 @@ void rsidToggle(bool rsidEnable){
   rsidTxEnable = 0;
  }
 }
+#endif
 
+#if 0 // пока отключу, чтобы сэкономить память
 void rsidTx(long freqRsid, int modeRsid, struct Gen *gen){ // , AD9833 *genPtr
- static int const RSID[8][16]  = {             // PROGMEM
-  {0,0,8,10,9,10,1,8,2,11,9,2,3,11,1,-83},     //bpsk31
-  {0,2,3,12,13,14,12,1,13,2,15,15,3,0,14,-83}, //qpsk31
-  {0,0,9,13,11,13,2,9,4,15,11,4,6,15,2,-83},   //bpsk63
-  {0,0,1,7,2,7,3,1,6,4,2,6,5,4,3,-83},         //qpsk63
-  {0,9,7,15,0,6,14,14,1,8,9,8,6,1,7,0},        //RTTY45
-  {0,2,1,2,9,0,10,3,1,10,11,3,9,8,8,-66},      //feld hell
-  {0,0,11,3,15,3,4,11,8,7,15,8,12,7,4,-83},    //bpsk125
-  {0,0,3,9,6,9,5,3,10,12,6,10,15,12,5,-83}     //qpsk125
- };
+	static int const RSID[8][16]  = {             // PROGMEM
+		{0,0,8,10,9,10,1,8,2,11,9,2,3,11,1,-83},     //bpsk31
+		{0,2,3,12,13,14,12,1,13,2,15,15,3,0,14,-83}, //qpsk31
+		{0,0,9,13,11,13,2,9,4,15,11,4,6,15,2,-83},   //bpsk63
+		{0,0,1,7,2,7,3,1,6,4,2,6,5,4,3,-83},         //qpsk63
+		{0,9,7,15,0,6,14,14,1,8,9,8,6,1,7,0},        //RTTY45
+		{0,2,1,2,9,0,10,3,1,10,11,3,9,8,8,-66},      //feld hell
+		{0,0,11,3,15,3,4,11,8,7,15,8,12,7,4,-83},    //bpsk125
+		{0,0,3,9,6,9,5,3,10,12,6,10,15,12,5,-83}     //qpsk125
+	};
 
-  int a = 0;
-  int offset;
-  
-  offset = RSID[modeRsid][15]; // used to center RSID and transmission // int(pgm_read_word(& ))
-  // DDS.setfreq(freqRsid + offset, 0);
-  // gen.ApplySignal(SQUARE_WAVE,REG0,((freqRsid + offset)*1000ul)); // SINE_WAVE // SQUARE_WAVE // HALF_SQUARE_WAVE
-  genPtr->ApplySignal(SQUARE_WAVE,REG0,(freqRsid + offset)); // SINE_WAVE // SQUARE_WAVE // HALF_SQUARE_WAVE 
-  delay(500);   // 0.5s for RSID start
-  for  (int element=0; element<15; element++) {   // For Each Element in the message
-    a = int(pgm_read_word(&RSID[modeRsid][element])); // get the numerical ASCII Code
-  //  DDS.setfreq(freqRsid + offset + (a * 10.766), 0);
-    // gen.ApplySignal(SQUARE_WAVE,REG0,((freqRsid + offset + (a * 10.766))*1000ul)); // SINE_WAVE // SQUARE_WAVE // HALF_SQUARE_WAVE
-    genPtr->ApplySignal(SQUARE_WAVE,REG0,(freqRsid + offset + (a * 10.766))); // SINE_WAVE // SQUARE_WAVE // HALF_SQUARE_WAVE
-    delay(92);  // baud rate 92,88ms
-  }
+	int a = 0;
+	int offset;
+
+	offset = RSID[modeRsid][15]; // used to center RSID and transmission // int(pgm_read_word(& ))
+	// DDS.setfreq(freqRsid + offset, 0);
+	// gen.ApplySignal(SQUARE_WAVE,REG0,((freqRsid + offset)*1000ul)); // SINE_WAVE // SQUARE_WAVE // HALF_SQUARE_WAVE
+	//  genPtr->ApplySignal(SQUARE_WAVE,REG0,(freqRsid + offset)); // SINE_WAVE // SQUARE_WAVE // HALF_SQUARE_WAVE
+	gen->freq = freqRsid + offset;
+	checkGen(gen);
+	delayMillis(500);   // 0.5s for RSID start
+	for  (int element=0; element<15; element++) {   // For Each Element in the message
+		a = RSID[modeRsid][element]; // get the numerical ASCII Code // int(pgm_read_word(& ))
+		//  DDS.setfreq(freqRsid + offset + (a * 10.766), 0);
+		// gen.ApplySignal(SQUARE_WAVE,REG0,((freqRsid + offset + (a * 10.766))*1000ul)); // SINE_WAVE // SQUARE_WAVE // HALF_SQUARE_WAVE
+		//    genPtr->ApplySignal(SQUARE_WAVE,REG0,(freqRsid + offset + (a * 10.766))); // SINE_WAVE // SQUARE_WAVE // HALF_SQUARE_WAVE
+		gen->freq = freqRsid + offset + (a * 10.766);
+		checkGen(gen);
+		delayMillis(92);  // baud rate 92,88ms
+	}
 }
-
+#endif
 
 /***************************************************************************
  * CW
  ***************************************************************************/
-void HFBEACON::cwTx(long freqCw, char * stringCw, int cwWpm, AD9833 *genPtr){
-  static int const morseVaricode[2][59] PROGMEM = {
-  {0,212,72,0,144,0,128,120,176,180,0,80,204,132,84,144,248,120,56,24,8,0,128,192,224,240,224,168,0,136,0,48,104,64,128,160,128,0,32,192,0,0,112,160,64,192,128,224,96,208,64,0,128,32,16,96,144,176,192},
-  {7,6,5,0,4,0,4,6,5,6,0,5,6,6,6,5,5,5,5,5,5,5,5,5,5,5,6,6,0,5,0,6,6,2,4,4,3,1,4,3,4,2,4,3,4,2,2,3,4,4,3,3,1,3,4,3,4,4,4}
- }; 
+void cwTx(long freqCw, char * stringCw, int cwWpm, struct Gen *gen){ // AD9833 *genPtr
+	static int const morseVaricode[2][59]  = { // PROGMEM
+		{0,212,72,0,144,0,128,120,176,180,0,80,204,132,84,144,248,120,56,24,8,0,128,192,224,240,224,168,0,136,0,48,104,64,128,160,128,0,32,192,0,0,112,160,64,192,128,224,96,208,64,0,128,32,16,96,144,176,192},
+		{7,6,5,0,4,0,4,6,5,6,0,5,6,6,6,5,5,5,5,5,5,5,5,5,5,5,6,6,0,5,0,6,6,2,4,4,3,1,4,3,4,2,4,3,4,2,2,3,4,4,3,3,1,3,4,3,4,4,4}
+	};
 
- int tempo = 1200 / cwWpm; // Duration of 1 dot
- byte nb_bits,val;
- int d;
- int c = *stringCw++;
-  while(c != '\0'){
-  c = toupper(c); // Uppercase
-  if(c == 32){       // Space character between words in string
-  //  DDS.setfreq(0,0); // 7 dots length spacing
-    genPtr->ApplySignal(SQUARE_WAVE,REG0,0); // SINE_WAVE // SQUARE_WAVE // HALF_SQUARE_WAVE
-    delay(tempo * 7); // between words
-  }
-  else if (c > 32 && c < 91) {
-   c = c - 32;
-   d = int(pgm_read_word(&morseVaricode[0][c]));    // Get CW varicode    
-   nb_bits = int(pgm_read_word(&morseVaricode[1][c])); // Get CW varicode length
-   if(nb_bits != 0){ // Number of bits = 0 -> invalid character #%<>
-    for(int b = 7; b > 7 - nb_bits; b--){ // Send CW character, each bit represents a symbol (0 for dot, 1 for dash) MSB first 
-     val=bitRead(d,b);  //look varicode
-      // DDS.setfreq(freqCw,0); // Let's transmit
-      // gen.ApplySignal(SQUARE_WAVE,REG0,((freqCw)*1000ul)); // SINE_WAVE // SQUARE_WAVE // HALF_SQUARE_WAVE
-      genPtr->ApplySignal(SQUARE_WAVE,REG0,(freqCw)); // SINE_WAVE // SQUARE_WAVE // HALF_SQUARE_WAVE
-      delay(tempo + 2 * tempo * val);  // A dot length or a dash length (3 times the dot)
+	int tempo = 1200 / cwWpm; // Duration of 1 dot
+	uint8_t nb_bits,val;
+	int d;
+	int c = *stringCw++;
+	while(c != '\0'){
+		c = toupper(c); // Uppercase
+		if(c == 32){       // Space character between words in string
+//			DDS.setfreq(0,0); // 7 dots length spacing
+//			genPtr->ApplySignal(SQUARE_WAVE,REG0,0); // SINE_WAVE // SQUARE_WAVE // HALF_SQUARE_WAVE
+			gen->freq = 0;
+			checkGen(gen);
+			delayMillis(tempo * 7); // between words
+		}
+		else if (c > 32 && c < 91) {
+			c = c - 32;
+			d = morseVaricode[0][c];    // Get CW varicode // int(pgm_read_word(& ))
+			nb_bits = morseVaricode[1][c]; // Get CW varicode length // int(pgm_read_word(& ))
+			if(nb_bits != 0){ // Number of bits = 0 -> invalid character #%<>
+				for(int b = 7; b > 7 - nb_bits; b--){ // Send CW character, each bit represents a symbol (0 for dot, 1 for dash) MSB first
+					val=bitRead(d,b);  //look varicode
+//					DDS.setfreq(freqCw,0); // Let's transmit
+//					gen.ApplySignal(SQUARE_WAVE,REG0,((freqCw)*1000ul)); // SINE_WAVE // SQUARE_WAVE // HALF_SQUARE_WAVE
+//					genPtr->ApplySignal(SQUARE_WAVE,REG0,(freqCw)); // SINE_WAVE // SQUARE_WAVE // HALF_SQUARE_WAVE
+					gen->freq = freqCw;
+					checkGen(gen);
+					delay(tempo + 2 * tempo * val);  // A dot length or a dash length (3 times the dot)
       
-      // DDS.setfreq(0,0); // 1 dot length spacing
-      genPtr->ApplySignal(SQUARE_WAVE,REG0,0); // SINE_WAVE // SQUARE_WAVE // HALF_SQUARE_WAVE
-      delay(tempo);     // between symbols in a character
-     }
-    }
-  //  DDS.setfreq(0,0); // 3 dots length spacing
-   genPtr->ApplySignal(SQUARE_WAVE,REG0,0); // SINE_WAVE // SQUARE_WAVE // HALF_SQUARE_WAVE
-   delay(tempo * 3); // between characters in a word
-   }
-  c = *stringCw++;  // Next caracter in string
- }
-//  DDS.setfreq(0, 0); // No more transmission
-  genPtr->ApplySignal(SQUARE_WAVE,REG0,0); // SINE_WAVE // SQUARE_WAVE // HALF_SQUARE_WAVE
+//					DDS.setfreq(0,0); // 1 dot length spacing
+//					genPtr->ApplySignal(SQUARE_WAVE,REG0,0); // SINE_WAVE // SQUARE_WAVE // HALF_SQUARE_WAVE
+					gen->freq = 0;
+					checkGen(gen);
+					delayMillis(tempo);     // between symbols in a character
+				}
+			}
+//			DDS.setfreq(0,0); // 3 dots length spacing
+//			genPtr->ApplySignal(SQUARE_WAVE,REG0,0); // SINE_WAVE // SQUARE_WAVE // HALF_SQUARE_WAVE
+			gen->freq = 0;
+			checkGen(gen);
+			delayMillis(tempo * 3); // between characters in a word
+		}
+		c = *stringCw++;  // Next caracter in string
+	}
+//	DDS.setfreq(0, 0); // No more transmission
+//  genPtr->ApplySignal(SQUARE_WAVE,REG0,0); // SINE_WAVE // SQUARE_WAVE // HALF_SQUARE_WAVE
+	gen->freq = 0;
+    checkGen(gen);
 }
 
 
 /********************************************************
  * PSK
  ********************************************************/
-#if 1
-void HFBEACON::pskTx(long freqPsk, char * stringPsk, int modePsk, int baudsPsk, AD9833 *genPtr)
+#if 0
+void pskTx(long freqPsk, char * stringPsk, int modePsk, int baudsPsk, AD9833 *genPtr)
 {
  static int const PskVaricode[2][128] PROGMEM = {
   {683,731,749,887,747,863,751,765,767,239,29,879,733,31,885,939,759,757,941,943,859,875,877,
@@ -211,7 +226,7 @@ void HFBEACON::pskTx(long freqPsk, char * stringPsk, int modePsk, int baudsPsk, 
 genPtr->ApplySignal(SQUARE_WAVE,REG0,0); // SINE_WAVE // SQUARE_WAVE // HALF_SQUARE_WAVE
 }
 #endif
-#if 1
+#if 0
 void HFBEACON::pskIdle(long freqIdle, int baudsIdle, AD9833 *genPtr)
 {
  int phaseIdle = 0;

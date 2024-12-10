@@ -1,8 +1,51 @@
-21:37:56 **** Incremental Build of configuration Debug for project test1 ****
+23:41:48 **** Incremental Build of configuration Debug for project test1 ****
 make all 
 Invoking: GNU ARM Cross Print Size
 arm-none-eabi-size --format=berkeley "test1.elf"
    text	   data	    bss	    dec	    hex	filename
-  26461	   2496	     96	  29053	   717d	test1.elf
+  26684	   2496	    104	  29284	   7264	test1.elf
+Finished building: test1.siz
+ 
+23:44:47 **** Incremental Build of configuration Debug for project test1 ****
+make all 
+Building file: ../template/hfbeacon.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\GMD\workspace\test1\test1\lib\CMSIS\CoreSupport\gmd" -I"C:\GMD\workspace\test1\test1\lib\CMSIS\DeviceSupport\system" -I"C:\GMD\workspace\test1\test1\lib\StdPeriph_Driver\Includes" -I"C:\GMD\workspace\test1\test1\template" -std=gnu11 -MMD -MP -MF"template/hfbeacon.d" -MT"template/hfbeacon.o" -c -o "template/hfbeacon.o" "../template/hfbeacon.c"
+../template/hfbeacon.c: In function 'cwTx':
+../template/hfbeacon.c:120:4: warning: implicit declaration of function 'checkGen' [-Wimplicit-function-declaration]
+    checkGen(gen);
+    ^~~~~~~~
+../template/hfbeacon.c:121:4: warning: implicit declaration of function 'delayMillis' [-Wimplicit-function-declaration]
+    delayMillis(tempo * 7); // between words
+    ^~~~~~~~~~~
+../template/hfbeacon.c:129:10: warning: implicit declaration of function 'bitRead' [-Wimplicit-function-declaration]
+      val=bitRead(d,b);  //look varicode
+          ^~~~~~~
+../template/hfbeacon.c:135:6: warning: implicit declaration of function 'delay' [-Wimplicit-function-declaration]
+      delay(tempo + 2 * tempo * val);  // A dot length or a dash length (3 times the dot)
+      ^~~~~
+Finished building: ../template/hfbeacon.c
+ 
+Building target: test1.elf
+Invoking: GNU ARM Cross C Linker
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:\GMD\workspace\test1\test1\lib\Script\flash\gmd\gw1ns4c_flash.ld" -Xlinker --gc-sections -Wl,-Map,"test1.map" -o "test1.elf"  ./template/gw1ns4c_it.o ./template/hfbeacon.o ./template/main.o ./template/retarget.o  ./lib/StdPeriph_Driver/Sources/gw1ns4c_gpio.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_i2c.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_misc.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_rtc.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_spi.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_syscon.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_timer.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_uart.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_wdog.o  ./lib/CMSIS/DeviceSupport/system/system_gw1ns4c.o  ./lib/CMSIS/DeviceSupport/startup/gmd/startup_gw1ns4c.o  ./lib/CMSIS/CoreSupport/gmd/core_cm3.o   
+Finished building target: test1.elf
+ 
+Invoking: GNU ARM Cross Create Flash Image
+arm-none-eabi-objcopy -O binary "test1.elf"  "test1.bin"
+Finished building: test1.bin
+ 
+Invoking: GNU ARM Cross Print Size
+arm-none-eabi-size --format=berkeley "test1.elf"
+   text	   data	    bss	    dec	    hex	filename
+  26684	   2496	    104	  29284	   7264	test1.elf
+Finished building: test1.siz
+ 
+23:45:03 **** Incremental Build of configuration Debug for project test1 ****
+make all 
+Invoking: GNU ARM Cross Print Size
+arm-none-eabi-size --format=berkeley "test1.elf"
+   text	   data	    bss	    dec	    hex	filename
+  26684	   2496	    104	  29284	   7264	test1.elf
 Finished building: test1.siz
  

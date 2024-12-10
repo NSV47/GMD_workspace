@@ -12,47 +12,46 @@
  ******************************************************************************************
  */
 
-/* Includes ------------------------------------------------------------------*/
-#include "gw1ns4c.h"
-#include <stdio.h>
-#include <hfbeacon.h>
 #include "main.h"
 
-/* Includes ------------------------------------------------------------------*/
-void SPIInit(void);
-void initializeUART();
-void initializeTimer();
-void delayMillis(uint32_t ms);
+long freq=10140600;
+
+struct Gen gen;
+
+uint32_t old_freq  = 0;
+uint32_t old_phase = 0;
 
 /* Functions ------------------------------------------------------------------*/
 int main(void)
 {
 
-
 	SystemInit();		//Initializes system
-  SPIInit();			//Initializes SPI
-  initializeUART();
-  initializeTimer();
+	SPIInit();			//Initializes SPI
+	initializeUART();
+	initializeTimer();
 
-  SPI_Select_Slave(0x01) ;	//Select The SPI Slave
-  SPI_WriteData(0x01);			//Send Jedec
+	SPI_Select_Slave(0x01) ;	//Select The SPI Slave
+	SPI_WriteData(0x01);			//Send Jedec
 
-  printf("init complete\r\n");
+	gen.freq  = freq;
+	gen.phase = 0;
 
-  uint32_t counter = 0;
+	printf("init complete\r\n");
 
-  while(1)
-  {
+	uint32_t counter = 0;
+
+	while(1)
+	{
 	  /*
-	  	 * 10.12.24
-	  	 * Что, если в бесконечном цикле постоянно проверять не изменилось ли значение
-	  	 * частоты или фазы (как с опросом кнопки). И если изменилось то передавать по SPI.
-	  	 * А еще надо поместить это в функцию проверки, чтобы её ещё можно было
-	  	 * вызывать принудительно. Например, в hfbeacon.c я изменяю значение частоты и
-	  	 * вызываю функцию проверки на старое/новое значение. В этом случае функция
-	  	 * возвращает true и начинается передача по SPI
-	  	 *
-	  	 * */
+		 * 10.12.24
+		 * Что, если в бесконечном цикле постоянно проверять не изменилось ли значение
+		 * частоты или фазы (как с опросом кнопки). И если изменилось то передавать по SPI.
+		 * А еще надо поместить это в функцию проверки, чтобы её ещё можно было
+		 * вызывать принудительно. Например, в hfbeacon.c я изменяю значение частоты и
+		 * вызываю функцию проверки на старое/новое значение. В этом случае функция
+		 * возвращает true и начинается передача по SPI
+		 *
+		 * */
 
 	  /*
 	   * 10.12.24
@@ -61,34 +60,47 @@ int main(void)
 	   * редко, передавать её постоянно будет как-то некрасиво.
 	   *
 	   * */
-      counter++;
+	  counter++;
 	  printf("GowinFPGA says hi! Count: %d\r\n", counter);
-#if 1
+	#if 1
 	  if(~SPI_GetToeStatus() && SPI_GetTrdyStatus() == 1)
 	  {
-	      SPI_WriteData(0x81);//Send Jedec
+		  SPI_WriteData(0x81);//Send Jedec
 	  }
-#endif
+	#endif
 
 	  delayMillis(500);
 
-#if 1
+	#if 1
 	  if(~SPI_GetRoeStatus() && SPI_GetRrdyStatus() == 1)
 	  {
-//	      UART_SendChar(UART0,SPI_ReadData());
+	//	      UART_SendChar(UART0,SPI_ReadData());
 		  char value = SPI_ReadData();
 		  printf("value: %c\r\n", value);
 	  }
-#endif
+	#endif
 	  delayMillis(500);
-#if 1
+	#if 1
 	  if(~SPI_GetToeStatus() && SPI_GetTrdyStatus() == 1)
 	  {
 		  SPI_WriteData(0x01);//Send Jedec
 	  }
-#endif
+	#endif
 	  delayMillis(500);
-  }
+	}
+}
+
+extern uint8_t checkGen(struct Gen *gen){
+	uint8_t res = 0;
+	if(old_freq != gen->freq){
+		res = 1;
+		old_freq = gen->freq;
+	}
+	if(old_phase != gen->phase){
+		res = 2;
+		old_phase = gen->phase;
+	}
+	return res;
 }
 
 //Initializes SPI

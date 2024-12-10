@@ -1,6 +1,8 @@
 /target/
 !.mvn/wrapper/maven-wrapper.jar
 
+Debug/
+
 ### STS ###
 .apt_generated
 .classpath
@@ -15,7 +17,7 @@
 
 ### Eclipse ###
 
-.metadata/
+.metadata
 bin/
 tmp/
 *.tmp
