@@ -15,6 +15,8 @@
 #ifndef HFBEACON_H
 #define HFBEACON_H
 
+#define bitRead(value, bit) (((value) >> (bit)) & 0x01)
+
 #include <stdbool.h>
 #include <ctype.h>
 #include <stdio.h>

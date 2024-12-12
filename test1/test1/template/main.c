@@ -21,6 +21,8 @@ struct Gen gen;
 uint32_t old_freq  = 0;
 uint32_t old_phase = 0;
 
+char txString[] = "NSV"; // RYRYRYRY THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG
+
 /* Functions ------------------------------------------------------------------*/
 int main(void)
 {
@@ -42,52 +44,34 @@ int main(void)
 
 	while(1)
 	{
-	  /*
-		 * 10.12.24
-		 * Что, если в бесконечном цикле постоянно проверять не изменилось ли значение
-		 * частоты или фазы (как с опросом кнопки). И если изменилось то передавать по SPI.
-		 * А еще надо поместить это в функцию проверки, чтобы её ещё можно было
-		 * вызывать принудительно. Например, в hfbeacon.c я изменяю значение частоты и
-		 * вызываю функцию проверки на старое/новое значение. В этом случае функция
-		 * возвращает true и начинается передача по SPI
-		 *
-		 * */
 
-	  /*
-	   * 10.12.24
-	   * Еще сегодня утром были мысли по поводу одновременного изменения частоты и фазы.
-	   * Не передавать же мне постоянно по SPI ещё и фазу, а, учитывая, что она меняется
-	   * редко, передавать её постоянно будет как-то некрасиво.
-	   *
-	   * */
-	  counter++;
-	  printf("GowinFPGA says hi! Count: %d\r\n", counter);
+//		cwTx(freq, txString, 20, &gen);
+//		delayMillis(1000);
+
+//		pskTx(freq, txString, 'B', 31, &gen);
+//		delayMillis(2000);
+
+		counter++;
+		printf("GowinFPGA says hi! Count: %d\r\n", counter);
 	#if 1
-	  if(~SPI_GetToeStatus() && SPI_GetTrdyStatus() == 1)
-	  {
-		  SPI_WriteData(0x81);//Send Jedec
-	  }
+		if(~SPI_GetToeStatus() && SPI_GetTrdyStatus() == 1)
+		{
+			SPI_WriteData(0x81);//Send Jedec
+		}
 	#endif
 
-	  delayMillis(500);
+		delayMillis(500);
 
 	#if 1
-	  if(~SPI_GetRoeStatus() && SPI_GetRrdyStatus() == 1)
-	  {
-	//	      UART_SendChar(UART0,SPI_ReadData());
-		  char value = SPI_ReadData();
-		  printf("value: %c\r\n", value);
-	  }
+		if(~SPI_GetToeStatus() && SPI_GetTrdyStatus() == 1)
+		{
+			SPI_WriteData(0x01);//Send Jedec
+		}
 	#endif
-	  delayMillis(500);
-	#if 1
-	  if(~SPI_GetToeStatus() && SPI_GetTrdyStatus() == 1)
-	  {
-		  SPI_WriteData(0x01);//Send Jedec
-	  }
-	#endif
-	  delayMillis(500);
+
+		delayMillis(500);
 	}
+
 }
 
 extern uint8_t checkGen(struct Gen *gen){
@@ -101,7 +85,7 @@ extern uint8_t checkGen(struct Gen *gen){
 		old_phase = gen->phase;
 	}
 
-
+	send_frequency(gen->freq);
 
 	return res;
 }

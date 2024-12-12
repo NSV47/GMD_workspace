@@ -1,8 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#define bitRead(value, bit) (((value) >> (bit)) & 0x01)
-
 /* Includes ------------------------------------------------------------------*/
 #include "gw1ns4c.h"
 #include <stdio.h>

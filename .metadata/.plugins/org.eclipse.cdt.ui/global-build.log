@@ -168,3 +168,211 @@ arm-none-eabi-size --format=berkeley "test1.elf"
   26692	   2496	    104	  29292	   726c	test1.elf
 Finished building: test1.siz
  
+18:52:04 **** Incremental Build of configuration Debug for project test1 ****
+make all 
+Building file: ../template/main.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\GMD\workspace\test1\test1\lib\CMSIS\CoreSupport\gmd" -I"C:\GMD\workspace\test1\test1\lib\CMSIS\DeviceSupport\system" -I"C:\GMD\workspace\test1\test1\lib\StdPeriph_Driver\Includes" -I"C:\GMD\workspace\test1\test1\template" -std=gnu11 -MMD -MP -MF"template/main.d" -MT"template/main.o" -c -o "template/main.o" "../template/main.c"
+../template/main.c: In function 'checkGen':
+../template/main.c:63:20: warning: passing argument 1 of 'send_frequency' makes pointer from integer without a cast [-Wint-conversion]
+  send_frequency(gen->freq);
+                 ~~~^~~~~~
+In file included from ../template/main.c:15:
+../template/main.h:24:31: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'uint32_t' {aka 'long unsigned int'}
+ void send_frequency(uint32_t *freq);
+                     ~~~~~~~~~~^~~~
+Finished building: ../template/main.c
+ 
+Building target: test1.elf
+Invoking: GNU ARM Cross C Linker
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:\GMD\workspace\test1\test1\lib\Script\flash\gmd\gw1ns4c_flash.ld" -Xlinker --gc-sections -Wl,-Map,"test1.map" -o "test1.elf"  ./template/gw1ns4c_it.o ./template/hfbeacon.o ./template/main.o ./template/retarget.o  ./lib/StdPeriph_Driver/Sources/gw1ns4c_gpio.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_i2c.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_misc.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_rtc.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_spi.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_syscon.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_timer.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_uart.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_wdog.o  ./lib/CMSIS/DeviceSupport/system/system_gw1ns4c.o  ./lib/CMSIS/DeviceSupport/startup/gmd/startup_gw1ns4c.o  ./lib/CMSIS/CoreSupport/gmd/core_cm3.o   
+c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/bin/ld.exe: ./template/main.o: in function `main':
+C:\GMD\workspace\test1\test1\Debug/../template/main.c:47: undefined reference to `pskTx'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:48: test1.elf] Error 1
+18:53:01 **** Incremental Build of configuration Debug for project test1 ****
+make all 
+Building file: ../template/main.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\GMD\workspace\test1\test1\lib\CMSIS\CoreSupport\gmd" -I"C:\GMD\workspace\test1\test1\lib\CMSIS\DeviceSupport\system" -I"C:\GMD\workspace\test1\test1\lib\StdPeriph_Driver\Includes" -I"C:\GMD\workspace\test1\test1\template" -std=gnu11 -MMD -MP -MF"template/main.d" -MT"template/main.o" -c -o "template/main.o" "../template/main.c"
+../template/main.c: In function 'checkGen':
+../template/main.c:67:20: warning: passing argument 1 of 'send_frequency' makes pointer from integer without a cast [-Wint-conversion]
+  send_frequency(gen->freq);
+                 ~~~^~~~~~
+In file included from ../template/main.c:15:
+../template/main.h:24:31: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'uint32_t' {aka 'long unsigned int'}
+ void send_frequency(uint32_t *freq);
+                     ~~~~~~~~~~^~~~
+Finished building: ../template/main.c
+ 
+Building target: test1.elf
+Invoking: GNU ARM Cross C Linker
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:\GMD\workspace\test1\test1\lib\Script\flash\gmd\gw1ns4c_flash.ld" -Xlinker --gc-sections -Wl,-Map,"test1.map" -o "test1.elf"  ./template/gw1ns4c_it.o ./template/hfbeacon.o ./template/main.o ./template/retarget.o  ./lib/StdPeriph_Driver/Sources/gw1ns4c_gpio.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_i2c.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_misc.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_rtc.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_spi.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_syscon.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_timer.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_uart.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_wdog.o  ./lib/CMSIS/DeviceSupport/system/system_gw1ns4c.o  ./lib/CMSIS/DeviceSupport/startup/gmd/startup_gw1ns4c.o  ./lib/CMSIS/CoreSupport/gmd/core_cm3.o   
+c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/bin/ld.exe: ./template/hfbeacon.o: in function `cwTx':
+C:\GMD\workspace\test1\test1\Debug/../template/hfbeacon.c:129: undefined reference to `bitRead'
+c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/bin/ld.exe: C:\GMD\workspace\test1\test1\Debug/../template/hfbeacon.c:135: undefined reference to `delay'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:48: test1.elf] Error 1
+18:53:30 **** Incremental Build of configuration Debug for project test1 ****
+make all 
+Building file: ../template/hfbeacon.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\GMD\workspace\test1\test1\lib\CMSIS\CoreSupport\gmd" -I"C:\GMD\workspace\test1\test1\lib\CMSIS\DeviceSupport\system" -I"C:\GMD\workspace\test1\test1\lib\StdPeriph_Driver\Includes" -I"C:\GMD\workspace\test1\test1\template" -std=gnu11 -MMD -MP -MF"template/hfbeacon.d" -MT"template/hfbeacon.o" -c -o "template/hfbeacon.o" "../template/hfbeacon.c"
+../template/hfbeacon.c: In function 'cwTx':
+../template/hfbeacon.c:120:4: warning: implicit declaration of function 'checkGen' [-Wimplicit-function-declaration]
+    checkGen(gen);
+    ^~~~~~~~
+../template/hfbeacon.c:121:4: warning: implicit declaration of function 'delayMillis' [-Wimplicit-function-declaration]
+    delayMillis(tempo * 7); // between words
+    ^~~~~~~~~~~
+../template/hfbeacon.c:129:10: warning: implicit declaration of function 'bitRead' [-Wimplicit-function-declaration]
+      val=bitRead(d,b);  //look varicode
+          ^~~~~~~
+Finished building: ../template/hfbeacon.c
+ 
+Building target: test1.elf
+Invoking: GNU ARM Cross C Linker
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:\GMD\workspace\test1\test1\lib\Script\flash\gmd\gw1ns4c_flash.ld" -Xlinker --gc-sections -Wl,-Map,"test1.map" -o "test1.elf"  ./template/gw1ns4c_it.o ./template/hfbeacon.o ./template/main.o ./template/retarget.o  ./lib/StdPeriph_Driver/Sources/gw1ns4c_gpio.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_i2c.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_misc.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_rtc.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_spi.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_syscon.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_timer.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_uart.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_wdog.o  ./lib/CMSIS/DeviceSupport/system/system_gw1ns4c.o  ./lib/CMSIS/DeviceSupport/startup/gmd/startup_gw1ns4c.o  ./lib/CMSIS/CoreSupport/gmd/core_cm3.o   
+c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/bin/ld.exe: ./template/hfbeacon.o: in function `cwTx':
+C:\GMD\workspace\test1\test1\Debug/../template/hfbeacon.c:129: undefined reference to `bitRead'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:48: test1.elf] Error 1
+18:54:11 **** Incremental Build of configuration Debug for project test1 ****
+make all 
+Building file: ../template/hfbeacon.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\GMD\workspace\test1\test1\lib\CMSIS\CoreSupport\gmd" -I"C:\GMD\workspace\test1\test1\lib\CMSIS\DeviceSupport\system" -I"C:\GMD\workspace\test1\test1\lib\StdPeriph_Driver\Includes" -I"C:\GMD\workspace\test1\test1\template" -std=gnu11 -MMD -MP -MF"template/hfbeacon.d" -MT"template/hfbeacon.o" -c -o "template/hfbeacon.o" "../template/hfbeacon.c"
+../template/hfbeacon.c: In function 'cwTx':
+../template/hfbeacon.c:120:4: warning: implicit declaration of function 'checkGen' [-Wimplicit-function-declaration]
+    checkGen(gen);
+    ^~~~~~~~
+../template/hfbeacon.c:121:4: warning: implicit declaration of function 'delayMillis' [-Wimplicit-function-declaration]
+    delayMillis(tempo * 7); // between words
+    ^~~~~~~~~~~
+Finished building: ../template/hfbeacon.c
+ 
+Building file: ../template/main.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\GMD\workspace\test1\test1\lib\CMSIS\CoreSupport\gmd" -I"C:\GMD\workspace\test1\test1\lib\CMSIS\DeviceSupport\system" -I"C:\GMD\workspace\test1\test1\lib\StdPeriph_Driver\Includes" -I"C:\GMD\workspace\test1\test1\template" -std=gnu11 -MMD -MP -MF"template/main.d" -MT"template/main.o" -c -o "template/main.o" "../template/main.c"
+../template/main.c: In function 'checkGen':
+../template/main.c:67:20: warning: passing argument 1 of 'send_frequency' makes pointer from integer without a cast [-Wint-conversion]
+  send_frequency(gen->freq);
+                 ~~~^~~~~~
+In file included from ../template/main.c:15:
+../template/main.h:22:31: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'uint32_t' {aka 'long unsigned int'}
+ void send_frequency(uint32_t *freq);
+                     ~~~~~~~~~~^~~~
+Finished building: ../template/main.c
+ 
+Building target: test1.elf
+Invoking: GNU ARM Cross C Linker
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:\GMD\workspace\test1\test1\lib\Script\flash\gmd\gw1ns4c_flash.ld" -Xlinker --gc-sections -Wl,-Map,"test1.map" -o "test1.elf"  ./template/gw1ns4c_it.o ./template/hfbeacon.o ./template/main.o ./template/retarget.o  ./lib/StdPeriph_Driver/Sources/gw1ns4c_gpio.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_i2c.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_misc.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_rtc.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_spi.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_syscon.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_timer.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_uart.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_wdog.o  ./lib/CMSIS/DeviceSupport/system/system_gw1ns4c.o  ./lib/CMSIS/DeviceSupport/startup/gmd/startup_gw1ns4c.o  ./lib/CMSIS/CoreSupport/gmd/core_cm3.o   
+Finished building target: test1.elf
+ 
+Invoking: GNU ARM Cross Create Flash Image
+arm-none-eabi-objcopy -O binary "test1.elf"  "test1.bin"
+Finished building: test1.bin
+ 
+Invoking: GNU ARM Cross Print Size
+arm-none-eabi-size --format=berkeley "test1.elf"
+   text	   data	    bss	    dec	    hex	filename
+  10996	   2140	    112	  13248	   33c0	test1.elf
+Finished building: test1.siz
+ 
+18:56:33 **** Incremental Build of configuration Debug for project test1 ****
+make all 
+Invoking: GNU ARM Cross Print Size
+arm-none-eabi-size --format=berkeley "test1.elf"
+   text	   data	    bss	    dec	    hex	filename
+  10996	   2140	    112	  13248	   33c0	test1.elf
+Finished building: test1.siz
+ 
+19:09:23 **** Incremental Build of configuration Debug for project test1 ****
+make all 
+Building file: ../template/main.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\GMD\workspace\test1\test1\lib\CMSIS\CoreSupport\gmd" -I"C:\GMD\workspace\test1\test1\lib\CMSIS\DeviceSupport\system" -I"C:\GMD\workspace\test1\test1\lib\StdPeriph_Driver\Includes" -I"C:\GMD\workspace\test1\test1\template" -std=gnu11 -MMD -MP -MF"template/main.d" -MT"template/main.o" -c -o "template/main.o" "../template/main.c"
+../template/main.c:76:1: error: expected identifier or '(' before '}' token
+ }
+ ^
+../template/main.c: In function 'checkGen':
+../template/main.c:89:20: warning: passing argument 1 of 'send_frequency' makes pointer from integer without a cast [-Wint-conversion]
+  send_frequency(gen->freq);
+                 ~~~^~~~~~
+In file included from ../template/main.c:15:
+../template/main.h:22:31: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'uint32_t' {aka 'long unsigned int'}
+ void send_frequency(uint32_t *freq);
+                     ~~~~~~~~~~^~~~
+make: *** [template/subdir.mk:29: template/main.o] Error 1
+19:09:25 **** Incremental Build of configuration Debug for project test1 ****
+make all 
+Building file: ../template/main.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\GMD\workspace\test1\test1\lib\CMSIS\CoreSupport\gmd" -I"C:\GMD\workspace\test1\test1\lib\CMSIS\DeviceSupport\system" -I"C:\GMD\workspace\test1\test1\lib\StdPeriph_Driver\Includes" -I"C:\GMD\workspace\test1\test1\template" -std=gnu11 -MMD -MP -MF"template/main.d" -MT"template/main.o" -c -o "template/main.o" "../template/main.c"
+../template/main.c:76:1: error: expected identifier or '(' before '}' token
+ }
+ ^
+../template/main.c: In function 'checkGen':
+../template/main.c:89:20: warning: passing argument 1 of 'send_frequency' makes pointer from integer without a cast [-Wint-conversion]
+  send_frequency(gen->freq);
+                 ~~~^~~~~~
+In file included from ../template/main.c:15:
+../template/main.h:22:31: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'uint32_t' {aka 'long unsigned int'}
+ void send_frequency(uint32_t *freq);
+                     ~~~~~~~~~~^~~~
+make: *** [template/subdir.mk:29: template/main.o] Error 1
+19:09:27 **** Incremental Build of configuration Debug for project test1 ****
+make all 
+Building file: ../template/main.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\GMD\workspace\test1\test1\lib\CMSIS\CoreSupport\gmd" -I"C:\GMD\workspace\test1\test1\lib\CMSIS\DeviceSupport\system" -I"C:\GMD\workspace\test1\test1\lib\StdPeriph_Driver\Includes" -I"C:\GMD\workspace\test1\test1\template" -std=gnu11 -MMD -MP -MF"template/main.d" -MT"template/main.o" -c -o "template/main.o" "../template/main.c"
+../template/main.c:76:1: error: expected identifier or '(' before '}' token
+ }
+ ^
+../template/main.c: In function 'checkGen':
+../template/main.c:89:20: warning: passing argument 1 of 'send_frequency' makes pointer from integer without a cast [-Wint-conversion]
+  send_frequency(gen->freq);
+                 ~~~^~~~~~
+In file included from ../template/main.c:15:
+../template/main.h:22:31: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'uint32_t' {aka 'long unsigned int'}
+ void send_frequency(uint32_t *freq);
+                     ~~~~~~~~~~^~~~
+make: *** [template/subdir.mk:29: template/main.o] Error 1
+19:09:52 **** Incremental Build of configuration Debug for project test1 ****
+make all 
+Building file: ../template/main.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\GMD\workspace\test1\test1\lib\CMSIS\CoreSupport\gmd" -I"C:\GMD\workspace\test1\test1\lib\CMSIS\DeviceSupport\system" -I"C:\GMD\workspace\test1\test1\lib\StdPeriph_Driver\Includes" -I"C:\GMD\workspace\test1\test1\template" -std=gnu11 -MMD -MP -MF"template/main.d" -MT"template/main.o" -c -o "template/main.o" "../template/main.c"
+../template/main.c: In function 'checkGen':
+../template/main.c:88:20: warning: passing argument 1 of 'send_frequency' makes pointer from integer without a cast [-Wint-conversion]
+  send_frequency(gen->freq);
+                 ~~~^~~~~~
+In file included from ../template/main.c:15:
+../template/main.h:22:31: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'uint32_t' {aka 'long unsigned int'}
+ void send_frequency(uint32_t *freq);
+                     ~~~~~~~~~~^~~~
+Finished building: ../template/main.c
+ 
+Building target: test1.elf
+Invoking: GNU ARM Cross C Linker
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:\GMD\workspace\test1\test1\lib\Script\flash\gmd\gw1ns4c_flash.ld" -Xlinker --gc-sections -Wl,-Map,"test1.map" -o "test1.elf"  ./template/gw1ns4c_it.o ./template/hfbeacon.o ./template/main.o ./template/retarget.o  ./lib/StdPeriph_Driver/Sources/gw1ns4c_gpio.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_i2c.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_misc.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_rtc.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_spi.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_syscon.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_timer.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_uart.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_wdog.o  ./lib/CMSIS/DeviceSupport/system/system_gw1ns4c.o  ./lib/CMSIS/DeviceSupport/startup/gmd/startup_gw1ns4c.o  ./lib/CMSIS/CoreSupport/gmd/core_cm3.o   
+Finished building target: test1.elf
+ 
+Invoking: GNU ARM Cross Create Flash Image
+arm-none-eabi-objcopy -O binary "test1.elf"  "test1.bin"
+Finished building: test1.bin
+ 
+Invoking: GNU ARM Cross Print Size
+arm-none-eabi-size --format=berkeley "test1.elf"
+   text	   data	    bss	    dec	    hex	filename
+  26540	   2496	    104	  29140	   71d4	test1.elf
+Finished building: test1.siz
+ 
+19:09:56 **** Incremental Build of configuration Debug for project test1 ****
+make all 
+Invoking: GNU ARM Cross Print Size
+arm-none-eabi-size --format=berkeley "test1.elf"
+   text	   data	    bss	    dec	    hex	filename
+  26540	   2496	    104	  29140	   71d4	test1.elf
+Finished building: test1.siz
+ 

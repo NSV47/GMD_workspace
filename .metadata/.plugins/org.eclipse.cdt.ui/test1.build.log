@@ -1,25 +1,11 @@
-18:45:59 **** Incremental Build of configuration Debug for project test1 ****
+19:09:56 **** Incremental Build of configuration Debug for project test1 ****
 make all 
-Building file: ../template/main.c
-Invoking: GNU ARM Cross C Compiler
-arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\GMD\workspace\test1\test1\lib\CMSIS\CoreSupport\gmd" -I"C:\GMD\workspace\test1\test1\lib\CMSIS\DeviceSupport\system" -I"C:\GMD\workspace\test1\test1\lib\StdPeriph_Driver\Includes" -I"C:\GMD\workspace\test1\test1\template" -std=gnu11 -MMD -MP -MF"template/main.d" -MT"template/main.o" -c -o "template/main.o" "../template/main.c"
-Finished building: ../template/main.c
- 
-Building target: test1.elf
-Invoking: GNU ARM Cross C Linker
-arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:\GMD\workspace\test1\test1\lib\Script\flash\gmd\gw1ns4c_flash.ld" -Xlinker --gc-sections -Wl,-Map,"test1.map" -o "test1.elf"  ./template/gw1ns4c_it.o ./template/hfbeacon.o ./template/main.o ./template/retarget.o  ./lib/StdPeriph_Driver/Sources/gw1ns4c_gpio.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_i2c.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_misc.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_rtc.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_spi.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_syscon.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_timer.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_uart.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_wdog.o  ./lib/CMSIS/DeviceSupport/system/system_gw1ns4c.o  ./lib/CMSIS/DeviceSupport/startup/gmd/startup_gw1ns4c.o  ./lib/CMSIS/CoreSupport/gmd/core_cm3.o   
-Finished building target: test1.elf
- 
-Invoking: GNU ARM Cross Create Flash Image
-arm-none-eabi-objcopy -O binary "test1.elf"  "test1.bin"
-Finished building: test1.bin
- 
 Invoking: GNU ARM Cross Print Size
 arm-none-eabi-size --format=berkeley "test1.elf"
    text	   data	    bss	    dec	    hex	filename
-  26692	   2496	    104	  29292	   726c	test1.elf
+  26540	   2496	    104	  29140	   71d4	test1.elf
 Finished building: test1.siz
  
 
-18:46:00 Build Finished (took 711ms)
+19:09:56 Build Finished (took 256ms)
 

@@ -132,7 +132,7 @@ void cwTx(long freqCw, char * stringCw, int cwWpm, struct Gen *gen){ // AD9833 *
 //					genPtr->ApplySignal(SQUARE_WAVE,REG0,(freqCw)); // SINE_WAVE // SQUARE_WAVE // HALF_SQUARE_WAVE
 					gen->freq = freqCw;
 					checkGen(gen);
-					delay(tempo + 2 * tempo * val);  // A dot length or a dash length (3 times the dot)
+					delayMillis(tempo + 2 * tempo * val);  // A dot length or a dash length (3 times the dot)
       
 //					DDS.setfreq(0,0); // 1 dot length spacing
 //					genPtr->ApplySignal(SQUARE_WAVE,REG0,0); // SINE_WAVE // SQUARE_WAVE // HALF_SQUARE_WAVE
