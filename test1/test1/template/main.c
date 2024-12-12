@@ -45,31 +45,30 @@ int main(void)
 	while(1)
 	{
 
-//		cwTx(freq, txString, 20, &gen);
-//		delayMillis(1000);
+		cwTx(freq, txString, 20, &gen);
+		delayMillis(1000);
 
 //		pskTx(freq, txString, 'B', 31, &gen);
 //		delayMillis(2000);
 
+#if 0
 		counter++;
 		printf("GowinFPGA says hi! Count: %d\r\n", counter);
-	#if 1
+
 		if(~SPI_GetToeStatus() && SPI_GetTrdyStatus() == 1)
 		{
 			SPI_WriteData(0x81);//Send Jedec
 		}
-	#endif
 
 		delayMillis(500);
 
-	#if 1
 		if(~SPI_GetToeStatus() && SPI_GetTrdyStatus() == 1)
 		{
 			SPI_WriteData(0x01);//Send Jedec
 		}
-	#endif
 
 		delayMillis(500);
+#endif
 	}
 
 }
@@ -85,7 +84,7 @@ extern uint8_t checkGen(struct Gen *gen){
 		old_phase = gen->phase;
 	}
 
-	send_frequency(gen->freq);
+	send_frequency(&gen->freq);
 
 	return res;
 }
@@ -104,6 +103,10 @@ void send_frequency(uint32_t *freq){
     buff[3] = fword >> 24 & 0xff; // старший, передавать с него
 
 //    fpga_spi_blink(true);
+    if(~SPI_GetToeStatus() && SPI_GetTrdyStatus() == 1)
+	{
+		SPI_WriteData(0x01);//Send Jedec
+	}
 
     for(uint8_t i=0;i<4;++i){
 //        digitalWrite(PIN_FPGA_CS, 0);
@@ -111,7 +114,10 @@ void send_frequency(uint32_t *freq){
 //        uint8_t fpga_output = SPI.transfer(buff[i]);
 //        SPI.endTransaction();
 //        digitalWrite(PIN_FPGA_CS, 1);
-    	SPI_WriteData(buff[i]);//Send Jedec
+    	if(~SPI_GetToeStatus() && SPI_GetTrdyStatus() == 1)
+			{
+				SPI_WriteData(buff[i]);//Send Jedec
+			}
     }
 }
 
