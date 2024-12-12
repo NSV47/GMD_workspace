@@ -21,5 +21,6 @@ void initializeUART();
 void initializeTimer();
 void delayMillis(uint32_t ms);
 extern uint8_t checkGen(struct Gen*);
+void send_frequency(uint32_t *freq);
 
 #endif /* MAIN_H */

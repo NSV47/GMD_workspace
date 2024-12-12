@@ -1,30 +1,9 @@
-23:41:48 **** Incremental Build of configuration Debug for project test1 ****
+18:24:41 **** Incremental Build of configuration Debug for project test1 ****
 make all 
-Invoking: GNU ARM Cross Print Size
-arm-none-eabi-size --format=berkeley "test1.elf"
-   text	   data	    bss	    dec	    hex	filename
-  26684	   2496	    104	  29284	   7264	test1.elf
-Finished building: test1.siz
- 
-23:44:47 **** Incremental Build of configuration Debug for project test1 ****
-make all 
-Building file: ../template/hfbeacon.c
+Building file: ../template/main.c
 Invoking: GNU ARM Cross C Compiler
-arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\GMD\workspace\test1\test1\lib\CMSIS\CoreSupport\gmd" -I"C:\GMD\workspace\test1\test1\lib\CMSIS\DeviceSupport\system" -I"C:\GMD\workspace\test1\test1\lib\StdPeriph_Driver\Includes" -I"C:\GMD\workspace\test1\test1\template" -std=gnu11 -MMD -MP -MF"template/hfbeacon.d" -MT"template/hfbeacon.o" -c -o "template/hfbeacon.o" "../template/hfbeacon.c"
-../template/hfbeacon.c: In function 'cwTx':
-../template/hfbeacon.c:120:4: warning: implicit declaration of function 'checkGen' [-Wimplicit-function-declaration]
-    checkGen(gen);
-    ^~~~~~~~
-../template/hfbeacon.c:121:4: warning: implicit declaration of function 'delayMillis' [-Wimplicit-function-declaration]
-    delayMillis(tempo * 7); // between words
-    ^~~~~~~~~~~
-../template/hfbeacon.c:129:10: warning: implicit declaration of function 'bitRead' [-Wimplicit-function-declaration]
-      val=bitRead(d,b);  //look varicode
-          ^~~~~~~
-../template/hfbeacon.c:135:6: warning: implicit declaration of function 'delay' [-Wimplicit-function-declaration]
-      delay(tempo + 2 * tempo * val);  // A dot length or a dash length (3 times the dot)
-      ^~~~~
-Finished building: ../template/hfbeacon.c
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\GMD\workspace\test1\test1\lib\CMSIS\CoreSupport\gmd" -I"C:\GMD\workspace\test1\test1\lib\CMSIS\DeviceSupport\system" -I"C:\GMD\workspace\test1\test1\lib\StdPeriph_Driver\Includes" -I"C:\GMD\workspace\test1\test1\template" -std=gnu11 -MMD -MP -MF"template/main.d" -MT"template/main.o" -c -o "template/main.o" "../template/main.c"
+Finished building: ../template/main.c
  
 Building target: test1.elf
 Invoking: GNU ARM Cross C Linker
@@ -41,11 +20,151 @@ arm-none-eabi-size --format=berkeley "test1.elf"
   26684	   2496	    104	  29284	   7264	test1.elf
 Finished building: test1.siz
  
-23:45:03 **** Incremental Build of configuration Debug for project test1 ****
+18:25:29 **** Incremental Build of configuration Debug for project test1 ****
 make all 
+Building file: ../template/main.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\GMD\workspace\test1\test1\lib\CMSIS\CoreSupport\gmd" -I"C:\GMD\workspace\test1\test1\lib\CMSIS\DeviceSupport\system" -I"C:\GMD\workspace\test1\test1\lib\StdPeriph_Driver\Includes" -I"C:\GMD\workspace\test1\test1\template" -std=gnu11 -MMD -MP -MF"template/main.d" -MT"template/main.o" -c -o "template/main.o" "../template/main.c"
+../template/main.c: In function 'send_frequency':
+../template/main.c:122:5: warning: implicit declaration of function 'fpga_spi_blink' [-Wimplicit-function-declaration]
+     fpga_spi_blink(true);
+     ^~~~~~~~~~~~~~
+../template/main.c:125:9: warning: implicit declaration of function 'digitalWrite' [-Wimplicit-function-declaration]
+         digitalWrite(PIN_FPGA_CS, 0);
+         ^~~~~~~~~~~~
+../template/main.c:125:22: error: 'PIN_FPGA_CS' undeclared (first use in this function)
+         digitalWrite(PIN_FPGA_CS, 0);
+                      ^~~~~~~~~~~
+../template/main.c:125:22: note: each undeclared identifier is reported only once for each function it appears in
+../template/main.c:126:12: error: '1073750528' is a pointer; did you mean to use '->'?
+         SPI.beginTransaction(SPISettings(1000000, SPI_MSBFIRST, SPI_MODE3));
+            ^
+            ->
+../template/main.c:126:30: warning: implicit declaration of function 'SPISettings'; did you mean 'SPI_SetPhase'? [-Wimplicit-function-declaration]
+         SPI.beginTransaction(SPISettings(1000000, SPI_MSBFIRST, SPI_MODE3));
+                              ^~~~~~~~~~~
+                              SPI_SetPhase
+../template/main.c:126:51: error: 'SPI_MSBFIRST' undeclared (first use in this function); did you mean 'SPI_BASE'?
+         SPI.beginTransaction(SPISettings(1000000, SPI_MSBFIRST, SPI_MODE3));
+                                                   ^~~~~~~~~~~~
+                                                   SPI_BASE
+../template/main.c:126:65: error: 'SPI_MODE3' undeclared (first use in this function); did you mean 'SPI_BASE'?
+         SPI.beginTransaction(SPISettings(1000000, SPI_MSBFIRST, SPI_MODE3));
+                                                                 ^~~~~~~~~
+                                                                 SPI_BASE
+../template/main.c:127:34: error: '1073750528' is a pointer; did you mean to use '->'?
+         uint8_t fpga_output = SPI.transfer(buff[i]);
+                                  ^
+                                  ->
+../template/main.c:128:12: error: '1073750528' is a pointer; did you mean to use '->'?
+         SPI.endTransaction();
+            ^
+            ->
+make: *** [template/subdir.mk:29: template/main.o] Error 1
+18:25:37 **** Incremental Build of configuration Debug for project test1 ****
+make all 
+Building file: ../template/main.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\GMD\workspace\test1\test1\lib\CMSIS\CoreSupport\gmd" -I"C:\GMD\workspace\test1\test1\lib\CMSIS\DeviceSupport\system" -I"C:\GMD\workspace\test1\test1\lib\StdPeriph_Driver\Includes" -I"C:\GMD\workspace\test1\test1\template" -std=gnu11 -MMD -MP -MF"template/main.d" -MT"template/main.o" -c -o "template/main.o" "../template/main.c"
+../template/main.c: In function 'send_frequency':
+../template/main.c:112:11: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     tmp = (uint64_t)(freq)*(uint64_t)4294967296;
+           ^
+../template/main.c:122:5: warning: implicit declaration of function 'fpga_spi_blink' [-Wimplicit-function-declaration]
+     fpga_spi_blink(true);
+     ^~~~~~~~~~~~~~
+../template/main.c:125:9: warning: implicit declaration of function 'digitalWrite' [-Wimplicit-function-declaration]
+         digitalWrite(PIN_FPGA_CS, 0);
+         ^~~~~~~~~~~~
+../template/main.c:125:22: error: 'PIN_FPGA_CS' undeclared (first use in this function)
+         digitalWrite(PIN_FPGA_CS, 0);
+                      ^~~~~~~~~~~
+../template/main.c:125:22: note: each undeclared identifier is reported only once for each function it appears in
+../template/main.c:126:12: error: '1073750528' is a pointer; did you mean to use '->'?
+         SPI.beginTransaction(SPISettings(1000000, SPI_MSBFIRST, SPI_MODE3));
+            ^
+            ->
+../template/main.c:126:30: warning: implicit declaration of function 'SPISettings'; did you mean 'SPI_SetPhase'? [-Wimplicit-function-declaration]
+         SPI.beginTransaction(SPISettings(1000000, SPI_MSBFIRST, SPI_MODE3));
+                              ^~~~~~~~~~~
+                              SPI_SetPhase
+../template/main.c:126:51: error: 'SPI_MSBFIRST' undeclared (first use in this function); did you mean 'SPI_BASE'?
+         SPI.beginTransaction(SPISettings(1000000, SPI_MSBFIRST, SPI_MODE3));
+                                                   ^~~~~~~~~~~~
+                                                   SPI_BASE
+../template/main.c:126:65: error: 'SPI_MODE3' undeclared (first use in this function); did you mean 'SPI_BASE'?
+         SPI.beginTransaction(SPISettings(1000000, SPI_MSBFIRST, SPI_MODE3));
+                                                                 ^~~~~~~~~
+                                                                 SPI_BASE
+../template/main.c:127:34: error: '1073750528' is a pointer; did you mean to use '->'?
+         uint8_t fpga_output = SPI.transfer(buff[i]);
+                                  ^
+                                  ->
+../template/main.c:128:12: error: '1073750528' is a pointer; did you mean to use '->'?
+         SPI.endTransaction();
+            ^
+            ->
+make: *** [template/subdir.mk:29: template/main.o] Error 1
+18:25:46 **** Incremental Build of configuration Debug for project test1 ****
+make all 
+Building file: ../template/main.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\GMD\workspace\test1\test1\lib\CMSIS\CoreSupport\gmd" -I"C:\GMD\workspace\test1\test1\lib\CMSIS\DeviceSupport\system" -I"C:\GMD\workspace\test1\test1\lib\StdPeriph_Driver\Includes" -I"C:\GMD\workspace\test1\test1\template" -std=gnu11 -MMD -MP -MF"template/main.d" -MT"template/main.o" -c -o "template/main.o" "../template/main.c"
+../template/main.c: In function 'send_frequency':
+../template/main.c:122:5: warning: implicit declaration of function 'fpga_spi_blink' [-Wimplicit-function-declaration]
+     fpga_spi_blink(true);
+     ^~~~~~~~~~~~~~
+../template/main.c:125:9: warning: implicit declaration of function 'digitalWrite' [-Wimplicit-function-declaration]
+         digitalWrite(PIN_FPGA_CS, 0);
+         ^~~~~~~~~~~~
+../template/main.c:125:22: error: 'PIN_FPGA_CS' undeclared (first use in this function)
+         digitalWrite(PIN_FPGA_CS, 0);
+                      ^~~~~~~~~~~
+../template/main.c:125:22: note: each undeclared identifier is reported only once for each function it appears in
+../template/main.c:126:12: error: '1073750528' is a pointer; did you mean to use '->'?
+         SPI.beginTransaction(SPISettings(1000000, SPI_MSBFIRST, SPI_MODE3));
+            ^
+            ->
+../template/main.c:126:30: warning: implicit declaration of function 'SPISettings'; did you mean 'SPI_SetPhase'? [-Wimplicit-function-declaration]
+         SPI.beginTransaction(SPISettings(1000000, SPI_MSBFIRST, SPI_MODE3));
+                              ^~~~~~~~~~~
+                              SPI_SetPhase
+../template/main.c:126:51: error: 'SPI_MSBFIRST' undeclared (first use in this function); did you mean 'SPI_BASE'?
+         SPI.beginTransaction(SPISettings(1000000, SPI_MSBFIRST, SPI_MODE3));
+                                                   ^~~~~~~~~~~~
+                                                   SPI_BASE
+../template/main.c:126:65: error: 'SPI_MODE3' undeclared (first use in this function); did you mean 'SPI_BASE'?
+         SPI.beginTransaction(SPISettings(1000000, SPI_MSBFIRST, SPI_MODE3));
+                                                                 ^~~~~~~~~
+                                                                 SPI_BASE
+../template/main.c:127:34: error: '1073750528' is a pointer; did you mean to use '->'?
+         uint8_t fpga_output = SPI.transfer(buff[i]);
+                                  ^
+                                  ->
+../template/main.c:128:12: error: '1073750528' is a pointer; did you mean to use '->'?
+         SPI.endTransaction();
+            ^
+            ->
+make: *** [template/subdir.mk:29: template/main.o] Error 1
+18:45:59 **** Incremental Build of configuration Debug for project test1 ****
+make all 
+Building file: ../template/main.c
+Invoking: GNU ARM Cross C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\GMD\workspace\test1\test1\lib\CMSIS\CoreSupport\gmd" -I"C:\GMD\workspace\test1\test1\lib\CMSIS\DeviceSupport\system" -I"C:\GMD\workspace\test1\test1\lib\StdPeriph_Driver\Includes" -I"C:\GMD\workspace\test1\test1\template" -std=gnu11 -MMD -MP -MF"template/main.d" -MT"template/main.o" -c -o "template/main.o" "../template/main.c"
+Finished building: ../template/main.c
+ 
+Building target: test1.elf
+Invoking: GNU ARM Cross C Linker
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:\GMD\workspace\test1\test1\lib\Script\flash\gmd\gw1ns4c_flash.ld" -Xlinker --gc-sections -Wl,-Map,"test1.map" -o "test1.elf"  ./template/gw1ns4c_it.o ./template/hfbeacon.o ./template/main.o ./template/retarget.o  ./lib/StdPeriph_Driver/Sources/gw1ns4c_gpio.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_i2c.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_misc.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_rtc.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_spi.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_syscon.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_timer.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_uart.o ./lib/StdPeriph_Driver/Sources/gw1ns4c_wdog.o  ./lib/CMSIS/DeviceSupport/system/system_gw1ns4c.o  ./lib/CMSIS/DeviceSupport/startup/gmd/startup_gw1ns4c.o  ./lib/CMSIS/CoreSupport/gmd/core_cm3.o   
+Finished building target: test1.elf
+ 
+Invoking: GNU ARM Cross Create Flash Image
+arm-none-eabi-objcopy -O binary "test1.elf"  "test1.bin"
+Finished building: test1.bin
+ 
 Invoking: GNU ARM Cross Print Size
 arm-none-eabi-size --format=berkeley "test1.elf"
    text	   data	    bss	    dec	    hex	filename
-  26684	   2496	    104	  29284	   7264	test1.elf
+  26692	   2496	    104	  29292	   726c	test1.elf
 Finished building: test1.siz
  

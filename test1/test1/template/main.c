@@ -100,7 +100,35 @@ extern uint8_t checkGen(struct Gen *gen){
 		res = 2;
 		old_phase = gen->phase;
 	}
+
+
+
 	return res;
+}
+
+void send_frequency(uint32_t *freq){
+    uint32_t fword;
+    uint64_t tmp;
+    tmp = (uint64_t)(*freq)*(uint64_t)4294967296;
+    fword = tmp / (uint32_t)27000000;
+
+    uint8_t buff[4];
+
+    buff[0] = fword       & 0xff;
+    buff[1] = fword >>  8 & 0xff;
+    buff[2] = fword >> 16 & 0xff;
+    buff[3] = fword >> 24 & 0xff; // старший, передавать с него
+
+//    fpga_spi_blink(true);
+
+    for(uint8_t i=0;i<4;++i){
+//        digitalWrite(PIN_FPGA_CS, 0);
+//        SPI.beginTransaction(SPISettings(1000000, SPI_MSBFIRST, SPI_MODE3));
+//        uint8_t fpga_output = SPI.transfer(buff[i]);
+//        SPI.endTransaction();
+//        digitalWrite(PIN_FPGA_CS, 1);
+    	SPI_WriteData(buff[i]);//Send Jedec
+    }
 }
 
 //Initializes SPI
