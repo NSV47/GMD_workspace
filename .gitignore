@@ -1,6 +1,7 @@
 /target/
 !.mvn/wrapper/maven-wrapper.jar
 
+.**/
 Debug/
 
 ### STS ###
@@ -17,7 +18,7 @@ Debug/
 
 ### Eclipse ###
 
-.metadata/
+.metadata
 bin/
 tmp/
 *.tmp
