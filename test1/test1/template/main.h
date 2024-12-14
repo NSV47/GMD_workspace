@@ -19,6 +19,7 @@ void initializeUART();
 void initializeTimer();
 void delayMillis(uint32_t ms);
 extern uint8_t checkGen(struct Gen*);
-void send_frequency(uint32_t *freq);
+void send_frequency(uint32_t*, uint8_t);
+void send_phase(uint32_t*);
 
 #endif /* MAIN_H */

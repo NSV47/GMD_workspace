@@ -21,7 +21,7 @@ struct Gen gen;
 uint32_t old_freq  = 0;
 uint32_t old_phase = 0;
 
-char txString[] = "NSV"; // RYRYRYRY THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG
+char txString[] = "RYRYRYRY THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG"; // RYRYRYRY THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG // NSV
 
 /* Functions ------------------------------------------------------------------*/
 int main(void)
@@ -45,11 +45,11 @@ int main(void)
 	while(1)
 	{
 
-		cwTx(freq, txString, 20, &gen);
-		delayMillis(1000);
+//		cwTx(freq, txString, 20, &gen);
+//		delayMillis(1000);
 
-//		pskTx(freq, txString, 'B', 31, &gen);
-//		delayMillis(2000);
+		pskTx(freq, txString, 'B', 31, &gen);
+		delayMillis(2000);
 
 #if 0
 		counter++;
@@ -79,21 +79,57 @@ extern uint8_t checkGen(struct Gen *gen){
 		res = 1;
 		old_freq = gen->freq;
 	}
+
 	if(old_phase != gen->phase){
 		res = 2;
 		old_phase = gen->phase;
 	}
 
-	send_frequency(&gen->freq);
+	send_frequency(&gen->freq, res);
+	if(res==2){
+		send_phase(&gen->phase);
+	}
 
 	return res;
 }
 
-void send_frequency(uint32_t *freq){
+void send_phase(uint32_t *phase){
+    uint32_t pword;
+
+    pword=(((float)(*phase)*11.25)/360)*4096;
+
+    uint8_t buff[2];
+
+    buff[0] = pword       & 0xff;
+    buff[1] = pword >>  8 & 0xff;
+
+//    fpga_spi_blink(true);
+//    if(~SPI_GetToeStatus() && SPI_GetTrdyStatus() == 1)
+//	{
+//		SPI_WriteData(0x01);//Send Jedec
+//	}
+
+    for(uint8_t i=0;i<2;++i){
+//    	printf("pword: %d\r\n", buff[i]);
+//        digitalWrite(PIN_FPGA_CS, 0);
+//        SPI.beginTransaction(SPISettings(1000000, SPI_MSBFIRST, SPI_MODE3));
+//        uint8_t fpga_output = SPI.transfer(buff[i]);
+//        SPI.endTransaction();
+//        digitalWrite(PIN_FPGA_CS, 1);
+    	if(~SPI_GetToeStatus() && SPI_GetTrdyStatus() == 1)
+		{
+			SPI_WriteData(buff[i]);//Send Jedec
+		}
+    }
+}
+
+void send_frequency(uint32_t *freq, uint8_t value){
     uint32_t fword;
     uint64_t tmp;
     tmp = (uint64_t)(*freq)*(uint64_t)4294967296;
     fword = tmp / (uint32_t)27000000;
+
+//    printf("fword: %d\r\n", fword);
 
     uint8_t buff[4];
 
@@ -105,10 +141,11 @@ void send_frequency(uint32_t *freq){
 //    fpga_spi_blink(true);
     if(~SPI_GetToeStatus() && SPI_GetTrdyStatus() == 1)
 	{
-		SPI_WriteData(0x01);//Send Jedec
+		SPI_WriteData(value); //Send Jedec // 0x01
 	}
 
     for(uint8_t i=0;i<4;++i){
+//    	printf("fword: %d\r\n", buff[i]);
 //        digitalWrite(PIN_FPGA_CS, 0);
 //        SPI.beginTransaction(SPISettings(1000000, SPI_MSBFIRST, SPI_MODE3));
 //        uint8_t fpga_output = SPI.transfer(buff[i]);

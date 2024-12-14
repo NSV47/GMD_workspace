@@ -16,6 +16,8 @@
 
 //HFBEACON Beacon;
 
+//uint8_t rsidTxEnable = 0;
+
 #if 0
 HFBEACON::HFBEACON(){
  rsidTxEnable = 0;
@@ -159,84 +161,93 @@ void cwTx(long freqCw, char * stringCw, int cwWpm, struct Gen *gen){ // AD9833 *
 /********************************************************
  * PSK
  ********************************************************/
-#if 0
-void pskTx(long freqPsk, char * stringPsk, int modePsk, int baudsPsk, AD9833 *genPtr)
+#if 1
+void pskTx(long freqPsk, char * stringPsk, int modePsk, int baudsPsk, struct Gen *gen) // AD9833 *genPtr
 {
- static int const PskVaricode[2][128] PROGMEM = {
-  {683,731,749,887,747,863,751,765,767,239,29,879,733,31,885,939,759,757,941,943,859,875,877,
-   855,891,893,951,853,861,955,763,895,1,511,351,501,475,725,699,383,251,247,367,479,117,53,
-   87,431,183,189,237,255,375,347,363,429,427,439,245,445,493,85,471,687,701,125,235,173,181,
-   119,219,253,341,127,509,381,215,187,221,171,213,477,175,111,109,343,437,349,373,379,685,503,
-   495,507,703,365,735,11,95,47,45,3,61,91,43,13,491,191,27,59,15,7,63,447,21,23,5,55,123,107,
-   223,93,469,695,443,693,727,949},
-  {10,10,10,10,10,10,10,10,10,8,5,10,10,5,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
-   10,1,9,9,9,9,10,10,9,8,8,9,9,7,6,7,9,8,8,8,8,9,9,9,9,9,9,8,9,9,7,9,10,10,7,8,8,8,7,8,8,9,7,
-   9,9,8,8,8,8,8,9,8,7,7,9,9,9,9,9,10,9,9,9,10,9,10,4,7,6,6,2,6,7,6,4,9,8,5,6,4,3,6,9,5,5,3,6,
-   7,7,8,7,9,10,9,10,10,10}
-  };
+	static int const PskVaricode[2][128]  = { // PROGMEM
+		{683,731,749,887,747,863,751,765,767,239,29,879,733,31,885,939,759,757,941,943,859,875,877,
+				855,891,893,951,853,861,955,763,895,1,511,351,501,475,725,699,383,251,247,367,479,117,53,
+				87,431,183,189,237,255,375,347,363,429,427,439,245,445,493,85,471,687,701,125,235,173,181,
+				119,219,253,341,127,509,381,215,187,221,171,213,477,175,111,109,343,437,349,373,379,685,503,
+				495,507,703,365,735,11,95,47,45,3,61,91,43,13,491,191,27,59,15,7,63,447,21,23,5,55,123,107,
+				223,93,469,695,443,693,727,949},
+		{10,10,10,10,10,10,10,10,10,8,5,10,10,5,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
+				10,1,9,9,9,9,10,10,9,8,8,9,9,7,6,7,9,8,8,8,8,9,9,9,9,9,9,8,9,9,7,9,10,10,7,8,8,8,7,8,8,9,7,
+				9,9,8,8,8,8,8,9,8,7,7,9,9,9,9,9,10,9,9,9,10,9,10,4,7,6,6,2,6,7,6,4,9,8,5,6,4,3,6,9,5,5,3,6,
+				7,7,8,7,9,10,9,10,10,10}
+	};
 
- static int const QpskConvol[32] PROGMEM = {16,8,-8,0,-8,0,16,8,0,-8,8,16,8,16,0,-8,8,16,0,-8,0,-8,8,16,-8,0,16,8,16,8,-8,0};
+	static int const QpskConvol[32]  = {16,8,-8,0,-8,0,16,8,0,-8,8,16,8,16,0,-8,8,16,0,-8,0,-8,8,16,-8,0,16,8,16,8,-8,0}; // PROGMEM
  
- int shreg = 0;  // Shift register qpsk	
- int phase = 0;
- if(rsidTxEnable == 1)
- {
-                                                         // 0 bpsk31
-                                                         // 1 qpsk31
-                                                         // 2 bpsk63
-   rsidTx(freqPsk, (baudsPsk >> 4) - (modePsk == 'B'), genPtr); // 3 qpsk63
-                                                         // 6 bpsk125
-                                                         // 7 qpsk125
- }     
- pskIdle(freqPsk, baudsPsk, genPtr);  // A little idle on start of transmission for AFC capture
-
- byte nb_bits,val;
- int d,e;
- int c = *stringPsk++;
- while (c != '\0')
- {
-  d = int(pgm_read_word(&PskVaricode[0][c]));    // Get PSK varicode    
-  nb_bits = int(pgm_read_word(&PskVaricode[1][c])); // Get PSK varicode length
-  d <<= 2; //add 00 on lsb for spacing between caracters
-  e = d;
-  for(int b = nb_bits + 2; b >= 0; b--) //send car in psk
-  {
-   val=bitRead(e,b); //look varicode
-   if(modePsk == 'B')  // BPSK mode
-   {
-    if (val == 0)
+	int shreg = 0;  // Shift register qpsk
+	int phase = 0;
+	if(0) // rsidTxEnable == 1
 	{
-     phase = (phase ^ 16) &16;  // Phase reverted on 0 bit
-    }
-   }
-   else if(modePsk == 'Q'){       // QPSK mode
-    shreg = (shreg << 1) | val;  // Loading shift register with next bit
-    d=(int)int(pgm_read_word(&QpskConvol[shreg & 31])); // Get the phase shift from convolution code of 5 bits in shit register
-    phase = (phase + d) & 31;  // Phase shifting
-   }
-  //  DDS.setfreq(freqPsk, phase); // Let's transmit
-    // gen.ApplySignal(SQUARE_WAVE,REG0,((freqPsk)*1000ul), REG0,phase); // SINE_WAVE // SQUARE_WAVE // HALF_SQUARE_WAVE
-    genPtr->ApplySignal(SQUARE_WAVE,REG0,freqPsk, REG0,(float)phase*11.25); // SINE_WAVE // SQUARE_WAVE // HALF_SQUARE_WAVE
-   delay((961 + baudsPsk) / baudsPsk);  // Gives the baud rate
-  }
-  c = *stringPsk++;  // Next caracter in string
- }
- pskIdle(freqPsk, baudsPsk, genPtr); // A little idle to end the transmission
-//  DDS.setfreq(0, 0); // No more transmission
-genPtr->ApplySignal(SQUARE_WAVE,REG0,0); // SINE_WAVE // SQUARE_WAVE // HALF_SQUARE_WAVE
+                                                         	 	  // 0 bpsk31
+                                                         	 	  // 1 qpsk31
+                                                         	 	  // 2 bpsk63
+		rsidTx(freqPsk, (baudsPsk >> 4) - (modePsk == 'B'), gen); // 3 qpsk63 // genPtr
+                                                         	 	  // 6 bpsk125
+                                                         	 	  // 7 qpsk125
+	}
+	pskIdle(freqPsk, baudsPsk, gen);  // A little idle on start of transmission for AFC capture //
+
+	uint8_t nb_bits,val;
+	int d,e;
+	int c = *stringPsk++;
+	while (c != '\0')
+	{
+		d = PskVaricode[0][c];    // Get PSK varicode    // int(pgm_read_word(& ))
+		nb_bits = PskVaricode[1][c]; // Get PSK varicode length // int(pgm_read_word(& ))
+		d <<= 2; //add 00 on lsb for spacing between caracters
+		e = d;
+		for(int b = nb_bits + 2; b >= 0; b--) //send car in psk
+		{
+			val=bitRead(e,b); //look varicode
+			if(modePsk == 'B')  // BPSK mode
+			{
+				if (val == 0)
+				{
+					phase = (phase ^ 16) &16;  // Phase reverted on 0 bit
+				}
+			}
+			else if(modePsk == 'Q'){       // QPSK mode
+				shreg = (shreg << 1) | val;  // Loading shift register with next bit
+				d=(int)QpskConvol[shreg & 31]; // Get the phase shift from convolution code of 5 bits in shit register // int(pgm_read_word(& ))
+				phase = (phase + d) & 31;  // Phase shifting
+			}
+//			DDS.setfreq(freqPsk, phase); // Let's transmit
+//			gen.ApplySignal(SQUARE_WAVE,REG0,((freqPsk)*1000ul), REG0,phase); // SINE_WAVE // SQUARE_WAVE // HALF_SQUARE_WAVE
+//			genPtr->ApplySignal(SQUARE_WAVE,REG0,freqPsk, REG0,(float)phase*11.25); // SINE_WAVE // SQUARE_WAVE // HALF_SQUARE_WAVE
+			gen->freq = freqPsk;
+			gen->phase = phase; // (float)phase*11.25;
+			checkGen(gen);
+			delayMillis((961 + baudsPsk) / baudsPsk);  // Gives the baud rate
+		}
+		c = *stringPsk++;  // Next caracter in string
+	}
+    pskIdle(freqPsk, baudsPsk, gen); // A little idle to end the transmission // genPtr
+//    DDS.setfreq(0, 0); // No more transmission
+//    genPtr->ApplySignal(SQUARE_WAVE,REG0,0); // SINE_WAVE // SQUARE_WAVE // HALF_SQUARE_WAVE
+    gen->freq = freqPsk;
+	checkGen(gen);
 }
 #endif
-#if 0
-void HFBEACON::pskIdle(long freqIdle, int baudsIdle, AD9833 *genPtr)
+
+#if 1
+void pskIdle(long freqIdle, int baudsIdle, struct Gen *gen) // AD9833 *genPtr
 {
- int phaseIdle = 0;
- for(int n = 0; n < baudsIdle; n++)
- {
-  phaseIdle = (phaseIdle ^ 16) & 16;  // Idle is a flow of zeroes so only phase inversion
-  // DDS.setfreq(freqIdle, phaseIdle);   // Let's transmit
-  // gen.ApplySignal(SQUARE_WAVE,REG0,((freqIdle)*1000ul), REG0,phaseIdle); // SINE_WAVE // SQUARE_WAVE // HALF_SQUARE_WAVE
-  genPtr->ApplySignal(SQUARE_WAVE,REG0,freqIdle, REG0,(float)phaseIdle*11.25); // SINE_WAVE // SQUARE_WAVE // HALF_SQUARE_WAVE
-  delay((961 + baudsIdle) / baudsIdle);  // Gives the baud rate
+	int phaseIdle = 0;
+	for(int n = 0; n < baudsIdle; n++)
+	{
+		phaseIdle = (phaseIdle ^ 16) & 16;  // Idle is a flow of zeroes so only phase inversion
+//		DDS.setfreq(freqIdle, phaseIdle);   // Let's transmit
+//		gen.ApplySignal(SQUARE_WAVE,REG0,((freqIdle)*1000ul), REG0,phaseIdle); // SINE_WAVE // SQUARE_WAVE // HALF_SQUARE_WAVE
+//		genPtr->ApplySignal(SQUARE_WAVE,REG0,freqIdle, REG0,(float)phaseIdle*11.25); // SINE_WAVE // SQUARE_WAVE // HALF_SQUARE_WAVE
+		gen->freq = freqIdle;
+		gen->phase = phaseIdle; // (float)phase*11.25;
+		checkGen(gen);
+		delayMillis((961 + baudsIdle) / baudsIdle);  // Gives the baud rate
  }
 }
 #endif
