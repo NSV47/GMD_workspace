@@ -77,23 +77,22 @@ extern uint8_t checkGen(struct Gen *gen){
 	uint8_t res = 0;
 	if(old_freq != gen->freq){
 		res = 1;
+		send_frequency(&gen->freq);
 		old_freq = gen->freq;
 	}
 
 	if(old_phase != gen->phase){
 		res = 2;
-		old_phase = gen->phase;
-	}
-
-	send_frequency(&gen->freq, res);
-	if(res==2){
+//		printf("old_phase\r\n");
 		send_phase(&gen->phase);
+		old_phase = gen->phase;
 	}
 
 	return res;
 }
 
 void send_phase(uint32_t *phase){
+//	printf("send_phase\r\n");
     uint32_t pword;
 
     pword=(((float)(*phase)*11.25)/360)*4096;
@@ -104,10 +103,10 @@ void send_phase(uint32_t *phase){
     buff[1] = pword >>  8 & 0xff;
 
 //    fpga_spi_blink(true);
-//    if(~SPI_GetToeStatus() && SPI_GetTrdyStatus() == 1)
-//	{
-//		SPI_WriteData(0x01);//Send Jedec
-//	}
+    if(~SPI_GetToeStatus() && SPI_GetTrdyStatus() == 1)
+	{
+		SPI_WriteData(0x02);//Send Jedec
+	}
 
     for(uint8_t i=0;i<2;++i){
 //    	printf("pword: %d\r\n", buff[i]);
@@ -123,7 +122,7 @@ void send_phase(uint32_t *phase){
     }
 }
 
-void send_frequency(uint32_t *freq, uint8_t value){
+void send_frequency(uint32_t *freq){
     uint32_t fword;
     uint64_t tmp;
     tmp = (uint64_t)(*freq)*(uint64_t)4294967296;
@@ -141,7 +140,7 @@ void send_frequency(uint32_t *freq, uint8_t value){
 //    fpga_spi_blink(true);
     if(~SPI_GetToeStatus() && SPI_GetTrdyStatus() == 1)
 	{
-		SPI_WriteData(value); //Send Jedec // 0x01
+		SPI_WriteData(0x01); //Send Jedec // 0x01
 	}
 
     for(uint8_t i=0;i<4;++i){
