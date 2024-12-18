@@ -2,7 +2,7 @@
  * *****************************************************************************************
  *
  * 		Copyright (C) 2014-2021 Gowin Semiconductor Technology Co.,Ltd.
- * 		
+ *
  * @file        system_gw1ns4c.c
  * @author      Embedded Development Team
  * @version     V1.x.x
@@ -17,7 +17,7 @@
  *                                 before branch to main program. This call is mad inside
  *                                 the "startup_gw1ns4c.s" file.
  *                - SystemCoreClock variable: Contains the core clock, it can be used
- *                                 by the user application to setup the SysTick 
+ *                                 by the user application to setup the SysTick
  *                                 timer or configure other parameters.
  *                - SystemCoreClockUpdate(): Updates the variable SystemCoreClock and must
  *                                 be called whenever the core clock is changed
@@ -31,8 +31,8 @@
 
 /** @addtogroup gw1ns4c_system
   * @{
-  */  
-  
+  */
+
 /** @addtogroup GW1NS4C_System_Private_Includes
   * @{
   */
@@ -138,7 +138,7 @@ void SystemInit (void)
 /**
   * @}
   */
-  
+
 /**
   * @}
   */

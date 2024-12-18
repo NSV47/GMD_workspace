@@ -1,4 +1,3 @@
-
 /*
  * *****************************************************************************************
  *
@@ -12,149 +11,50 @@
  ******************************************************************************************
  */
 
-#include "main.h"
+/* Includes ------------------------------------------------------------------*/
+#include "gw1ns4c.h"
+#include <stdio.h>
 
-long freq=10140600;
-
-struct Gen gen;
-
-uint32_t old_freq  = 0;
-uint32_t old_phase = 0;
-
-char txString[] = "RYRYRYRY THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG"; // RYRYRYRY THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG // NSV
+/* Includes ------------------------------------------------------------------*/
+void SPIInit(void);
+void initializeUART();
+void initializeTimer();
+void delayMillis(uint32_t ms);
 
 /* Functions ------------------------------------------------------------------*/
 int main(void)
 {
+  SystemInit();		//Initializes system
+  SPIInit();			//Initializes SPI
+  initializeUART();
+  initializeTimer();
 
-	SystemInit();		//Initializes system
-	SPIInit();			//Initializes SPI
-	initializeUART();
-	initializeTimer();
+  SPI_Select_Slave(0x01) ;	//Select The SPI Slave
+  SPI_WriteData(0x01);			//Send Jedec
 
-	SPI_Select_Slave(0x01) ;	//Select The SPI Slave
-	SPI_WriteData(0x01);			//Send Jedec
+  printf("init complete\r\n");
 
-	gen.freq  = freq;
-	gen.phase = 0;
+  uint32_t counter = 0;
 
-	printf("init complete\r\n");
+  while(1)
+  {
 
-	uint32_t counter = 0;
+      counter++;
+	  printf("GowinFPGA says hi! Count: %d\r\n", counter);
 
-	while(1)
-	{
+	  if(~SPI_GetToeStatus() && SPI_GetTrdyStatus() == 1)
+	  {
+	      SPI_WriteData(0x81);
+	  }
 
-//		cwTx(freq, txString, 20, &gen);
-//		delayMillis(1000);
+	  delayMillis(500);
 
-		pskTx(freq, txString, 'B', 31, &gen);
-		delayMillis(2000);
-
-#if 0
-		counter++;
-		printf("GowinFPGA says hi! Count: %d\r\n", counter);
-
-		if(~SPI_GetToeStatus() && SPI_GetTrdyStatus() == 1)
-		{
-			SPI_WriteData(0x81);//Send Jedec
-		}
-
-		delayMillis(500);
-
-		if(~SPI_GetToeStatus() && SPI_GetTrdyStatus() == 1)
-		{
-			SPI_WriteData(0x01);//Send Jedec
-		}
-
-		delayMillis(500);
-#endif
-	}
-
-}
-
-extern uint8_t checkGen(struct Gen *gen){
-	uint8_t res = 0;
-	if(old_freq != gen->freq){
-		res = 1;
-		send_frequency(&gen->freq);
-		old_freq = gen->freq;
-	}
-
-	if(old_phase != gen->phase){
-		res = 2;
-//		printf("old_phase\r\n");
-		send_phase(&gen->phase);
-		old_phase = gen->phase;
-	}
-
-	return res;
-}
-
-void send_phase(uint32_t *phase){
-//	printf("send_phase\r\n");
-    uint32_t pword;
-
-    pword=(((float)(*phase)*11.25)/360)*4096;
-
-    uint8_t buff[2];
-
-    buff[0] = pword       & 0xff;
-    buff[1] = pword >>  8 & 0xff;
-
-//    fpga_spi_blink(true);
-    if(~SPI_GetToeStatus() && SPI_GetTrdyStatus() == 1)
-	{
-		SPI_WriteData(0x02);//Send Jedec
-	}
-
-    for(uint8_t i=0;i<2;++i){
-//    	printf("pword: %d\r\n", buff[i]);
-//        digitalWrite(PIN_FPGA_CS, 0);
-//        SPI.beginTransaction(SPISettings(1000000, SPI_MSBFIRST, SPI_MODE3));
-//        uint8_t fpga_output = SPI.transfer(buff[i]);
-//        SPI.endTransaction();
-//        digitalWrite(PIN_FPGA_CS, 1);
-    	if(~SPI_GetToeStatus() && SPI_GetTrdyStatus() == 1)
-		{
-			SPI_WriteData(buff[i]);//Send Jedec
-		}
-    }
-}
-
-void send_frequency(uint32_t *freq){
-    uint32_t fword;
-    uint64_t tmp;
-    tmp = (uint64_t)(*freq)*(uint64_t)4294967296;
-    fword = tmp / (uint32_t)27000000;
-
-//    printf("fword: %d\r\n", fword);
-
-    uint8_t buff[4];
-
-    buff[0] = fword       & 0xff;
-    buff[1] = fword >>  8 & 0xff;
-    buff[2] = fword >> 16 & 0xff;
-    buff[3] = fword >> 24 & 0xff; // старший, передавать с него
-
-//    fpga_spi_blink(true);
-    if(~SPI_GetToeStatus() && SPI_GetTrdyStatus() == 1)
-	{
-		SPI_WriteData(0x01); //Send Jedec // 0x01
-	}
-
-    for(uint8_t i=0;i<4;++i){
-//    	printf("fword: %d\r\n", buff[i]);
-//        digitalWrite(PIN_FPGA_CS, 0);
-//        SPI.beginTransaction(SPISettings(1000000, SPI_MSBFIRST, SPI_MODE3));
-//        uint8_t fpga_output = SPI.transfer(buff[i]);
-//        SPI.endTransaction();
-//        digitalWrite(PIN_FPGA_CS, 1);
-    	if(~SPI_GetToeStatus() && SPI_GetTrdyStatus() == 1)
-			{
-				SPI_WriteData(buff[i]);//Send Jedec
-			}
-    }
+	  if(~SPI_GetToeStatus() && SPI_GetTrdyStatus() == 1)
+	  {
+		  SPI_WriteData(0x01);
+	  }
+	  delayMillis(500);
+  }
 }
 
 //Initializes SPI
@@ -162,7 +62,7 @@ void SPIInit(void)
 {
 	SPI_InitTypeDef init_spi;
 
-  init_spi.CLKSEL= CLKSEL_CLK_DIV_6;		//80MHZ / 8
+  init_spi.CLKSEL= CLKSEL_CLK_DIV_6;		//60MHZ / 6
   init_spi.DIRECTION = DISABLE;					//MSB First
   init_spi.PHASE =DISABLE;							//ENABLE;//posedge
   init_spi.POLARITY =DISABLE;						//polarity 0
