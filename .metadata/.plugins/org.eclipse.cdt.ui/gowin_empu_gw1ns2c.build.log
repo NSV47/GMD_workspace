@@ -1,7 +1,0 @@
-13:46:40 **** Clean-only build of configuration Debug for project gowin_empu_gw1ns2c ****
-make clean 
-rm -rf  ./USER/gw1ns2c_it.o ./USER/main.o ./USER/retarget.o  ./SYSTEM/system_gw1ns2c.o  ./STARTUP/startup_gw1ns2c.o  ./PERIPHERALS/Sources/gw1ns2c_adc.o ./PERIPHERALS/Sources/gw1ns2c_gpio.o ./PERIPHERALS/Sources/gw1ns2c_i2c.o ./PERIPHERALS/Sources/gw1ns2c_misc.o ./PERIPHERALS/Sources/gw1ns2c_spi.o ./PERIPHERALS/Sources/gw1ns2c_syscon.o ./PERIPHERALS/Sources/gw1ns2c_timer.o ./PERIPHERALS/Sources/gw1ns2c_uart.o ./PERIPHERALS/Sources/gw1ns2c_wdog.o  ./CORE/core_cm3.o  gowin_empu_gw1ns2c.bin  gowin_empu_gw1ns2c.siz  ./STARTUP/startup_gw1ns2c.d  ./USER/gw1ns2c_it.d ./USER/main.d ./USER/retarget.d  ./SYSTEM/system_gw1ns2c.d  ./PERIPHERALS/Sources/gw1ns2c_adc.d ./PERIPHERALS/Sources/gw1ns2c_gpio.d ./PERIPHERALS/Sources/gw1ns2c_i2c.d ./PERIPHERALS/Sources/gw1ns2c_misc.d ./PERIPHERALS/Sources/gw1ns2c_spi.d ./PERIPHERALS/Sources/gw1ns2c_syscon.d ./PERIPHERALS/Sources/gw1ns2c_timer.d ./PERIPHERALS/Sources/gw1ns2c_uart.d ./PERIPHERALS/Sources/gw1ns2c_wdog.d  ./CORE/core_cm3.d  gowin_empu_gw1ns2c.elf
- 
-
-13:46:43 Build Finished (took 2s.598ms)
-

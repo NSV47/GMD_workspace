@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;test1/template/hfbeacon.cpp&apos; to &apos;hfbeacon.c&apos;" description="Rename resource &apos;hfbeacon.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="template/hfbeacon.cpp" name="hfbeacon.c" stamp="1733856612900" updateReferences="true"/>
-</session>
