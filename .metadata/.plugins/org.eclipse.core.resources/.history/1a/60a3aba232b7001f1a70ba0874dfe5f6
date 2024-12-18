@@ -1,0 +1,24 @@
+#ifndef MAIN_H
+#define MAIN_H
+
+/* Includes ------------------------------------------------------------------*/
+#include "gw1ns4c.h"
+#include <stdio.h>
+#include <hfbeacon.h>
+#include "main.h"
+
+/* Includes ------------------------------------------------------------------*/
+void SPIInit(void);
+void initializeUART();
+void initializeTimer();
+void delayMillis(uint32_t ms);
+uint8_t checkGen(struct Gen*);
+
+#if 1
+struct Gen{
+	uint32_t freq;
+	uint32_t phase;
+};
+#endif
+
+#endif /* MAIN_H */
