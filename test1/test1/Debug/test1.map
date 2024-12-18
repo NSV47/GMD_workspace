@@ -1,5 +1,7 @@
 Archive member included to satisfy reference by file (symbol)
 
+c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-ctype_.o)
+                              ./template/hfbeacon.o (_ctype_)
 c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-exit.o)
                               c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o (exit)
 c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-impure.o)
@@ -100,8 +102,6 @@ c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../ar
                               c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-fputwc.o) (_wcrtomb_r)
 c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-wctomb_r.o)
                               c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-locale.o) (__ascii_wctomb)
-c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-ctype_.o)
-                              c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-locale.o) (_ctype_)
 c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_arm_addsubdf3.o)
                               c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-vfprintf.o) (__aeabi_dsub)
 c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_arm_muldivdf3.o)
@@ -145,8 +145,10 @@ __lock___env_recursive_mutex
                     0x1               c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-lock.o)
 __lock___sinit_recursive_mutex
                     0x1               c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-lock.o)
+wsprSymb            0xa2              ./template/hfbeacon.o
 __lock___malloc_recursive_mutex
                     0x1               c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-lock.o)
+wsprSymbGen         0x4               ./template/hfbeacon.o
 __lock___at_quick_exit_mutex
                     0x1               c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-lock.o)
 __lock___dd_hash_mutex
@@ -197,6 +199,99 @@ Discarded input sections
  .text          0x00000000        0x0 ./template/gw1ns4c_it.o
  .data          0x00000000        0x0 ./template/gw1ns4c_it.o
  .bss           0x00000000        0x0 ./template/gw1ns4c_it.o
+ .group         0x00000000        0xc ./template/hfbeacon.o
+ .group         0x00000000        0xc ./template/hfbeacon.o
+ .group         0x00000000        0xc ./template/hfbeacon.o
+ .group         0x00000000        0xc ./template/hfbeacon.o
+ .group         0x00000000        0xc ./template/hfbeacon.o
+ .group         0x00000000        0xc ./template/hfbeacon.o
+ .group         0x00000000        0xc ./template/hfbeacon.o
+ .group         0x00000000        0xc ./template/hfbeacon.o
+ .group         0x00000000        0xc ./template/hfbeacon.o
+ .group         0x00000000        0xc ./template/hfbeacon.o
+ .group         0x00000000        0xc ./template/hfbeacon.o
+ .group         0x00000000        0xc ./template/hfbeacon.o
+ .group         0x00000000        0xc ./template/hfbeacon.o
+ .group         0x00000000        0xc ./template/hfbeacon.o
+ .group         0x00000000        0xc ./template/hfbeacon.o
+ .group         0x00000000        0xc ./template/hfbeacon.o
+ .group         0x00000000        0xc ./template/hfbeacon.o
+ .group         0x00000000        0xc ./template/hfbeacon.o
+ .group         0x00000000        0xc ./template/hfbeacon.o
+ .group         0x00000000        0xc ./template/hfbeacon.o
+ .group         0x00000000        0xc ./template/hfbeacon.o
+ .group         0x00000000        0xc ./template/hfbeacon.o
+ .group         0x00000000        0xc ./template/hfbeacon.o
+ .group         0x00000000        0xc ./template/hfbeacon.o
+ .group         0x00000000        0xc ./template/hfbeacon.o
+ .group         0x00000000        0xc ./template/hfbeacon.o
+ .group         0x00000000        0xc ./template/hfbeacon.o
+ .group         0x00000000        0xc ./template/hfbeacon.o
+ .group         0x00000000        0xc ./template/hfbeacon.o
+ .group         0x00000000        0xc ./template/hfbeacon.o
+ .group         0x00000000        0xc ./template/hfbeacon.o
+ .group         0x00000000        0xc ./template/hfbeacon.o
+ .group         0x00000000        0xc ./template/hfbeacon.o
+ .group         0x00000000        0xc ./template/hfbeacon.o
+ .text          0x00000000        0x0 ./template/hfbeacon.o
+ .data          0x00000000        0x0 ./template/hfbeacon.o
+ .bss           0x00000000        0x0 ./template/hfbeacon.o
+ .text.cwTx     0x00000000      0x140 ./template/hfbeacon.o
+ .text.pskTx    0x00000000      0x110 ./template/hfbeacon.o
+ .text.pskIdle  0x00000000       0x5a ./template/hfbeacon.o
+ .rodata.morseVaricode.5382
+                0x00000000      0x1d8 ./template/hfbeacon.o
+ .rodata.PskVaricode.5413
+                0x00000000      0x400 ./template/hfbeacon.o
+ .rodata.QpskConvol.5414
+                0x00000000       0x80 ./template/hfbeacon.o
+ .debug_info    0x00000000      0xd5f ./template/hfbeacon.o
+ .debug_abbrev  0x00000000      0x282 ./template/hfbeacon.o
+ .debug_aranges
+                0x00000000       0x30 ./template/hfbeacon.o
+ .debug_ranges  0x00000000       0x20 ./template/hfbeacon.o
+ .debug_macro   0x00000000      0x1b5 ./template/hfbeacon.o
+ .debug_macro   0x00000000      0xa78 ./template/hfbeacon.o
+ .debug_macro   0x00000000       0x10 ./template/hfbeacon.o
+ .debug_macro   0x00000000       0x22 ./template/hfbeacon.o
+ .debug_macro   0x00000000       0x22 ./template/hfbeacon.o
+ .debug_macro   0x00000000       0x58 ./template/hfbeacon.o
+ .debug_macro   0x00000000       0x18 ./template/hfbeacon.o
+ .debug_macro   0x00000000       0x94 ./template/hfbeacon.o
+ .debug_macro   0x00000000       0x35 ./template/hfbeacon.o
+ .debug_macro   0x00000000       0x34 ./template/hfbeacon.o
+ .debug_macro   0x00000000       0x57 ./template/hfbeacon.o
+ .debug_macro   0x00000000      0x174 ./template/hfbeacon.o
+ .debug_macro   0x00000000      0x339 ./template/hfbeacon.o
+ .debug_macro   0x00000000      0x119 ./template/hfbeacon.o
+ .debug_macro   0x00000000       0x1c ./template/hfbeacon.o
+ .debug_macro   0x00000000       0x35 ./template/hfbeacon.o
+ .debug_macro   0x00000000       0x10 ./template/hfbeacon.o
+ .debug_macro   0x00000000       0x16 ./template/hfbeacon.o
+ .debug_macro   0x00000000       0x43 ./template/hfbeacon.o
+ .debug_macro   0x00000000       0x34 ./template/hfbeacon.o
+ .debug_macro   0x00000000       0x10 ./template/hfbeacon.o
+ .debug_macro   0x00000000       0x58 ./template/hfbeacon.o
+ .debug_macro   0x00000000      0x182 ./template/hfbeacon.o
+ .debug_macro   0x00000000       0x10 ./template/hfbeacon.o
+ .debug_macro   0x00000000       0x6a ./template/hfbeacon.o
+ .debug_macro   0x00000000       0x1c ./template/hfbeacon.o
+ .debug_macro   0x00000000       0x52 ./template/hfbeacon.o
+ .debug_macro   0x00000000       0x40 ./template/hfbeacon.o
+ .debug_macro   0x00000000       0x10 ./template/hfbeacon.o
+ .debug_macro   0x00000000       0x40 ./template/hfbeacon.o
+ .debug_macro   0x00000000       0xd5 ./template/hfbeacon.o
+ .debug_macro   0x00000000       0x1c ./template/hfbeacon.o
+ .debug_macro   0x00000000       0x3d ./template/hfbeacon.o
+ .debug_macro   0x00000000       0x16 ./template/hfbeacon.o
+ .debug_macro   0x00000000      0x16f ./template/hfbeacon.o
+ .debug_line    0x00000000      0x4d5 ./template/hfbeacon.o
+ .debug_str     0x00000000     0x7d73 ./template/hfbeacon.o
+ .comment       0x00000000       0x77 ./template/hfbeacon.o
+ .debug_frame   0x00000000       0x7c ./template/hfbeacon.o
+ .ARM.attributes
+                0x00000000       0x2d ./template/hfbeacon.o
+ COMMON         0x00000000       0xa8 ./template/hfbeacon.o
  .group         0x00000000        0xc ./template/main.o
  .group         0x00000000        0xc ./template/main.o
  .group         0x00000000        0xc ./template/main.o
@@ -264,6 +359,28 @@ Discarded input sections
  .debug_macro   0x00000000       0x58 ./template/main.o
  .debug_macro   0x00000000       0x34 ./template/main.o
  .debug_macro   0x00000000       0x1c ./template/main.o
+ .debug_macro   0x00000000       0x18 ./template/main.o
+ .debug_macro   0x00000000       0x35 ./template/main.o
+ .debug_macro   0x00000000       0x34 ./template/main.o
+ .debug_macro   0x00000000      0x339 ./template/main.o
+ .debug_macro   0x00000000       0x10 ./template/main.o
+ .debug_macro   0x00000000       0x16 ./template/main.o
+ .debug_macro   0x00000000       0x43 ./template/main.o
+ .debug_macro   0x00000000       0x34 ./template/main.o
+ .debug_macro   0x00000000       0x10 ./template/main.o
+ .debug_macro   0x00000000       0x58 ./template/main.o
+ .debug_macro   0x00000000      0x182 ./template/main.o
+ .debug_macro   0x00000000       0x10 ./template/main.o
+ .debug_macro   0x00000000       0x1c ./template/main.o
+ .debug_macro   0x00000000       0x52 ./template/main.o
+ .debug_macro   0x00000000       0x40 ./template/main.o
+ .debug_macro   0x00000000       0x10 ./template/main.o
+ .debug_macro   0x00000000       0x40 ./template/main.o
+ .debug_macro   0x00000000       0xd5 ./template/main.o
+ .debug_macro   0x00000000       0x1c ./template/main.o
+ .debug_macro   0x00000000       0x3d ./template/main.o
+ .debug_macro   0x00000000       0x16 ./template/main.o
+ .debug_macro   0x00000000      0x16f ./template/main.o
  .group         0x00000000        0xc ./template/retarget.o
  .group         0x00000000        0xc ./template/retarget.o
  .group         0x00000000        0xc ./template/retarget.o
@@ -363,6 +480,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x3d ./template/retarget.o
  .debug_macro   0x00000000       0x16 ./template/retarget.o
  .debug_macro   0x00000000      0x16f ./template/retarget.o
+ .debug_macro   0x00000000       0x35 ./template/retarget.o
  .group         0x00000000        0xc ./lib/StdPeriph_Driver/Sources/gw1ns4c_gpio.o
  .group         0x00000000        0xc ./lib/StdPeriph_Driver/Sources/gw1ns4c_gpio.o
  .group         0x00000000        0xc ./lib/StdPeriph_Driver/Sources/gw1ns4c_gpio.o
@@ -1145,6 +1263,9 @@ Discarded input sections
  .debug_frame   0x00000000      0x320 ./lib/CMSIS/CoreSupport/gmd/core_cm3.o
  .ARM.attributes
                 0x00000000       0x2d ./lib/CMSIS/CoreSupport/gmd/core_cm3.o
+ .text          0x00000000        0x0 c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-ctype_.o)
+ .data          0x00000000        0x0 c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-ctype_.o)
+ .bss           0x00000000        0x0 c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-ctype_.o)
  .text          0x00000000        0x0 c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-exit.o)
  .data          0x00000000        0x0 c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-exit.o)
  .bss           0x00000000        0x0 c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-exit.o)
@@ -1403,9 +1524,6 @@ Discarded input sections
  .bss           0x00000000        0x0 c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-wctomb_r.o)
  .text._wctomb_r
                 0x00000000       0x14 c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-wctomb_r.o)
- .text          0x00000000        0x0 c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-ctype_.o)
- .data          0x00000000        0x0 c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-ctype_.o)
- .bss           0x00000000        0x0 c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-ctype_.o)
  .data          0x00000000        0x0 c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_arm_addsubdf3.o)
  .bss           0x00000000        0x0 c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_arm_addsubdf3.o)
  .data          0x00000000        0x0 c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_arm_muldivdf3.o)
@@ -1471,6 +1589,7 @@ LOAD c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-
 LOAD c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/crtbegin.o
 LOAD c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o
 LOAD ./template/gw1ns4c_it.o
+LOAD ./template/hfbeacon.o
 LOAD ./template/main.o
 LOAD ./template/retarget.o
 LOAD ./lib/StdPeriph_Driver/Sources/gw1ns4c_gpio.o
@@ -1499,7 +1618,7 @@ LOAD c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../
 LOAD c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libnosys.a
 END GROUP
 
-.text           0x00000000     0x681d
+.text           0x00000000     0x681c
  *(.isr_vector)
  .isr_vector    0x00000000       0xc0 ./lib/CMSIS/DeviceSupport/startup/gmd/startup_gw1ns4c.o
                 0x00000000                __isr_vector
@@ -1968,72 +2087,73 @@ END GROUP
  *(.dtors)
  *(.rodata*)
  .rodata        0x00006554       0x3c ./template/main.o
- .rodata._global_impure_ptr
-                0x00006590        0x4 c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-impure.o)
-                0x00006590                _global_impure_ptr
- .rodata._puts_r.str1.4
-                0x00006594        0x2 c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-puts.o)
- *fill*         0x00006596        0x2 
- .rodata._vfprintf_r.str1.4
-                0x00006598       0x42 c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-vfprintf.o)
- *fill*         0x000065da        0x2 
- .rodata.blanks.7370
-                0x000065dc       0x10 c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-vfprintf.o)
- .rodata.zeroes.7371
-                0x000065ec       0x10 c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-vfprintf.o)
- .rodata._dtoa_r.str1.4
-                0x000065fc        0xd c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-dtoa.o)
-                                 0x12 (size before relaxing)
- *fill*         0x00006609        0x7 
- .rodata.__mprec_bigtens
-                0x00006610       0x28 c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-mprec.o)
-                0x00006610                __mprec_bigtens
- .rodata.__mprec_tens
-                0x00006638       0xc8 c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-mprec.o)
-                0x00006638                __mprec_tens
- .rodata.p05.6125
-                0x00006700        0xc c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-mprec.o)
- .rodata._setlocale_r.str1.4
-                0x0000670c        0xa c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-locale.o)
-                                  0xd (size before relaxing)
- *fill*         0x00006716        0x2 
- .rodata.str1.4
-                0x00006718        0x4 c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-locale.o)
-                                  0x2 (size before relaxing)
  .rodata._ctype_
-                0x0000671c      0x101 c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-ctype_.o)
-                0x0000671c                _ctype_
+                0x00006590      0x101 c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-ctype_.o)
+                0x00006590                _ctype_
+ *fill*         0x00006691        0x3 
+ .rodata._global_impure_ptr
+                0x00006694        0x4 c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-impure.o)
+                0x00006694                _global_impure_ptr
+ .rodata._puts_r.str1.4
+                0x00006698        0x2 c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-puts.o)
+ *fill*         0x0000669a        0x2 
+ .rodata._vfprintf_r.str1.4
+                0x0000669c       0x42 c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-vfprintf.o)
+ *fill*         0x000066de        0x2 
+ .rodata.blanks.7370
+                0x000066e0       0x10 c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-vfprintf.o)
+ .rodata.zeroes.7371
+                0x000066f0       0x10 c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-vfprintf.o)
+ .rodata._dtoa_r.str1.4
+                0x00006700        0xd c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-dtoa.o)
+                                 0x12 (size before relaxing)
+ *fill*         0x0000670d        0x3 
+ .rodata.__mprec_bigtens
+                0x00006710       0x28 c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-mprec.o)
+                0x00006710                __mprec_bigtens
+ .rodata.__mprec_tens
+                0x00006738       0xc8 c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-mprec.o)
+                0x00006738                __mprec_tens
+ .rodata.p05.6125
+                0x00006800        0xc c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-mprec.o)
+ .rodata._setlocale_r.str1.4
+                0x0000680c        0xa c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-locale.o)
+                                  0xd (size before relaxing)
+ *fill*         0x00006816        0x2 
+ .rodata.str1.4
+                0x00006818        0x4 c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-locale.o)
+                                  0x2 (size before relaxing)
  *(.eh_frame*)
 
-.glue_7         0x00006820        0x0
- .glue_7        0x00006820        0x0 linker stubs
+.glue_7         0x0000681c        0x0
+ .glue_7        0x0000681c        0x0 linker stubs
 
-.glue_7t        0x00006820        0x0
- .glue_7t       0x00006820        0x0 linker stubs
+.glue_7t        0x0000681c        0x0
+ .glue_7t       0x0000681c        0x0 linker stubs
 
-.vfp11_veneer   0x00006820        0x0
- .vfp11_veneer  0x00006820        0x0 linker stubs
+.vfp11_veneer   0x0000681c        0x0
+ .vfp11_veneer  0x0000681c        0x0 linker stubs
 
-.v4_bx          0x00006820        0x0
- .v4_bx         0x00006820        0x0 linker stubs
+.v4_bx          0x0000681c        0x0
+ .v4_bx         0x0000681c        0x0 linker stubs
 
-.iplt           0x00006820        0x0
- .iplt          0x00006820        0x0 ./template/gw1ns4c_it.o
+.iplt           0x0000681c        0x0
+ .iplt          0x0000681c        0x0 ./template/gw1ns4c_it.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x0000681d                __exidx_start = .
+                0x0000681c                __exidx_start = .
 
-.ARM.exidx      0x00006820        0x8
+.ARM.exidx      0x0000681c        0x8
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
- .ARM.exidx     0x00006820        0x8 c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_udivmoddi4.o)
-                0x00006828                __exidx_end = .
-                0x00006828                __etext = .
+ .ARM.exidx     0x0000681c        0x8 c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_udivmoddi4.o)
+                0x00006824                __exidx_end = .
+                0x00006824                __etext = .
 
-.rel.dyn        0x00006828        0x0
- .rel.iplt      0x00006828        0x0 ./template/gw1ns4c_it.o
+.rel.dyn        0x00006824        0x0
+ .rel.iplt      0x00006824        0x0 ./template/gw1ns4c_it.o
 
-.data           0x20000000      0x9c0 load address 0x00006828
+.data           0x20000000      0x9c0 load address 0x00006824
                 0x20000000                __data_start__ = .
  *(vtable)
  *(.data*)
@@ -2084,10 +2204,10 @@ END GROUP
                 0x200009c0                . = ALIGN (0x4)
                 0x200009c0                __data_end__ = .
 
-.igot.plt       0x200009c0        0x0 load address 0x000071e8
+.igot.plt       0x200009c0        0x0 load address 0x000071e4
  .igot.plt      0x200009c0        0x0 ./template/gw1ns4c_it.o
 
-.bss            0x200009c0       0x60 load address 0x000071e8
+.bss            0x200009c0       0x60 load address 0x000071e4
                 0x200009c0                . = ALIGN (0x4)
                 0x200009c0                __bss_start__ = .
  *(.bss*)
@@ -2160,97 +2280,97 @@ OUTPUT(test1.elf elf32-littlearm)
  .ARM.attributes
                 0x00000158       0x1b ./lib/CMSIS/DeviceSupport/startup/gmd/startup_gw1ns4c.o
  .ARM.attributes
-                0x00000173       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-exit.o)
+                0x00000173       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-ctype_.o)
  .ARM.attributes
-                0x000001a0       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-impure.o)
+                0x000001a0       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-exit.o)
  .ARM.attributes
-                0x000001cd       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-memset.o)
+                0x000001cd       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-impure.o)
  .ARM.attributes
-                0x000001fa       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-printf.o)
+                0x000001fa       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-memset.o)
  .ARM.attributes
-                0x00000227       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-puts.o)
+                0x00000227       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-printf.o)
  .ARM.attributes
-                0x00000254       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strlen-stub.o)
+                0x00000254       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-puts.o)
  .ARM.attributes
-                0x00000281       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-vfprintf.o)
+                0x00000281       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strlen-stub.o)
  .ARM.attributes
-                0x000002ae       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-wsetup.o)
+                0x000002ae       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-vfprintf.o)
  .ARM.attributes
-                0x000002db       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-__call_atexit.o)
+                0x000002db       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-wsetup.o)
  .ARM.attributes
-                0x00000308       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-dtoa.o)
+                0x00000308       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-__call_atexit.o)
  .ARM.attributes
-                0x00000335       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-fflush.o)
+                0x00000335       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-dtoa.o)
  .ARM.attributes
-                0x00000362       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-findfp.o)
+                0x00000362       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-fflush.o)
  .ARM.attributes
-                0x0000038f       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-freer.o)
+                0x0000038f       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-findfp.o)
  .ARM.attributes
-                0x000003bc       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-fvwrite.o)
+                0x000003bc       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-freer.o)
  .ARM.attributes
-                0x000003e9       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-fwalk.o)
+                0x000003e9       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-fvwrite.o)
  .ARM.attributes
-                0x00000416       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-localeconv.o)
+                0x00000416       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-fwalk.o)
  .ARM.attributes
-                0x00000443       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-lock.o)
+                0x00000443       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-localeconv.o)
  .ARM.attributes
-                0x00000470       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-makebuf.o)
+                0x00000470       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-lock.o)
  .ARM.attributes
-                0x0000049d       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-mallocr.o)
+                0x0000049d       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-makebuf.o)
  .ARM.attributes
-                0x000004ca       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-memchr-stub.o)
+                0x000004ca       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-mallocr.o)
  .ARM.attributes
-                0x000004f7       0x1b c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-memcpy.o)
+                0x000004f7       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-memchr-stub.o)
  .ARM.attributes
-                0x00000512       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-memmove.o)
+                0x00000524       0x1b c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-memcpy.o)
  .ARM.attributes
-                0x0000053f       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-mlock.o)
+                0x0000053f       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-memmove.o)
  .ARM.attributes
-                0x0000056c       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-mprec.o)
+                0x0000056c       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-mlock.o)
  .ARM.attributes
-                0x00000599       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-reallocr.o)
+                0x00000599       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-mprec.o)
  .ARM.attributes
-                0x000005c6       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-s_frexp.o)
+                0x000005c6       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-reallocr.o)
  .ARM.attributes
-                0x000005f3       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-sbrkr.o)
+                0x000005f3       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-s_frexp.o)
  .ARM.attributes
-                0x00000620       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-stdio.o)
+                0x00000620       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-sbrkr.o)
  .ARM.attributes
-                0x0000064d       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strncpy.o)
+                0x0000064d       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-stdio.o)
  .ARM.attributes
-                0x0000067a       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-vfiprintf.o)
+                0x0000067a       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-strncpy.o)
  .ARM.attributes
-                0x000006a7       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-writer.o)
+                0x000006a7       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-vfiprintf.o)
  .ARM.attributes
-                0x000006d4       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-callocr.o)
+                0x000006d4       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-writer.o)
  .ARM.attributes
-                0x00000701       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-closer.o)
+                0x00000701       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-callocr.o)
  .ARM.attributes
-                0x0000072e       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-fclose.o)
+                0x0000072e       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-closer.o)
  .ARM.attributes
-                0x0000075b       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-fputwc.o)
+                0x0000075b       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-fclose.o)
  .ARM.attributes
-                0x00000788       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-fstatr.o)
+                0x00000788       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-fputwc.o)
  .ARM.attributes
-                0x000007b5       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-isattyr.o)
+                0x000007b5       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-fstatr.o)
  .ARM.attributes
-                0x000007e2       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-locale.o)
+                0x000007e2       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-isattyr.o)
  .ARM.attributes
-                0x0000080f       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-lseekr.o)
+                0x0000080f       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-locale.o)
  .ARM.attributes
-                0x0000083c       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-mbtowc_r.o)
+                0x0000083c       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-lseekr.o)
  .ARM.attributes
-                0x00000869       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-readr.o)
+                0x00000869       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-mbtowc_r.o)
  .ARM.attributes
-                0x00000896       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-reent.o)
+                0x00000896       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-readr.o)
  .ARM.attributes
-                0x000008c3       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-wbuf.o)
+                0x000008c3       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-reent.o)
  .ARM.attributes
-                0x000008f0       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-wcrtomb.o)
+                0x000008f0       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-wbuf.o)
  .ARM.attributes
-                0x0000091d       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-wctomb_r.o)
+                0x0000091d       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-wcrtomb.o)
  .ARM.attributes
-                0x0000094a       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-ctype_.o)
+                0x0000094a       0x2d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-wctomb_r.o)
  .ARM.attributes
                 0x00000977       0x1d c:/gmd/toolchain/arm_toolchain/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_arm_addsubdf3.o)
  .ARM.attributes
@@ -2339,7 +2459,7 @@ OUTPUT(test1.elf elf32-littlearm)
  .debug_ranges  0x000002b0       0xb0 ./lib/StdPeriph_Driver/Sources/gw1ns4c_uart.o
  .debug_ranges  0x00000360       0x18 ./lib/CMSIS/DeviceSupport/system/system_gw1ns4c.o
 
-.debug_macro    0x00000000     0x351a
+.debug_macro    0x00000000     0x2ae3
  .debug_macro   0x00000000      0x100 ./template/gw1ns4c_it.o
  .debug_macro   0x00000100      0xa78 ./template/gw1ns4c_it.o
  .debug_macro   0x00000b78       0x22 ./template/gw1ns4c_it.o
@@ -2362,45 +2482,22 @@ OUTPUT(test1.elf elf32-littlearm)
  .debug_macro   0x00001d36       0x1c ./template/gw1ns4c_it.o
  .debug_macro   0x00001d52      0x251 ./template/main.o
  .debug_macro   0x00001fa3       0x5e ./template/main.o
- .debug_macro   0x00002001       0x18 ./template/main.o
- .debug_macro   0x00002019       0x35 ./template/main.o
- .debug_macro   0x0000204e       0x34 ./template/main.o
- .debug_macro   0x00002082       0x16 ./template/main.o
- .debug_macro   0x00002098       0x97 ./template/main.o
- .debug_macro   0x0000212f      0x339 ./template/main.o
- .debug_macro   0x00002468       0xfd ./template/main.o
- .debug_macro   0x00002565       0x10 ./template/main.o
- .debug_macro   0x00002575       0x16 ./template/main.o
- .debug_macro   0x0000258b       0x43 ./template/main.o
- .debug_macro   0x000025ce       0x34 ./template/main.o
- .debug_macro   0x00002602       0x10 ./template/main.o
- .debug_macro   0x00002612       0x58 ./template/main.o
- .debug_macro   0x0000266a      0x182 ./template/main.o
- .debug_macro   0x000027ec       0x10 ./template/main.o
- .debug_macro   0x000027fc       0x1c ./template/main.o
- .debug_macro   0x00002818       0x52 ./template/main.o
- .debug_macro   0x0000286a       0x40 ./template/main.o
- .debug_macro   0x000028aa       0x10 ./template/main.o
- .debug_macro   0x000028ba       0x40 ./template/main.o
- .debug_macro   0x000028fa       0xd5 ./template/main.o
- .debug_macro   0x000029cf       0x1c ./template/main.o
- .debug_macro   0x000029eb       0x3d ./template/main.o
- .debug_macro   0x00002a28       0x16 ./template/main.o
- .debug_macro   0x00002a3e      0x16f ./template/main.o
- .debug_macro   0x00002bad      0x289 ./template/retarget.o
- .debug_macro   0x00002e36       0x16 ./template/retarget.o
- .debug_macro   0x00002e4c       0x35 ./template/retarget.o
- .debug_macro   0x00002e81       0x10 ./template/retarget.o
- .debug_macro   0x00002e91       0x10 ./template/retarget.o
- .debug_macro   0x00002ea1       0x35 ./template/retarget.o
- .debug_macro   0x00002ed6      0x122 ./template/retarget.o
- .debug_macro   0x00002ff8      0x100 ./lib/StdPeriph_Driver/Sources/gw1ns4c_spi.o
- .debug_macro   0x000030f8       0x8e ./lib/StdPeriph_Driver/Sources/gw1ns4c_spi.o
- .debug_macro   0x00003186      0x100 ./lib/StdPeriph_Driver/Sources/gw1ns4c_timer.o
- .debug_macro   0x00003286       0x1c ./lib/StdPeriph_Driver/Sources/gw1ns4c_timer.o
- .debug_macro   0x000032a2      0x100 ./lib/StdPeriph_Driver/Sources/gw1ns4c_uart.o
- .debug_macro   0x000033a2       0x76 ./lib/StdPeriph_Driver/Sources/gw1ns4c_uart.o
- .debug_macro   0x00003418      0x102 ./lib/CMSIS/DeviceSupport/system/system_gw1ns4c.o
+ .debug_macro   0x00002001       0x16 ./template/main.o
+ .debug_macro   0x00002017       0x97 ./template/main.o
+ .debug_macro   0x000020ae       0xfd ./template/main.o
+ .debug_macro   0x000021ab      0x289 ./template/retarget.o
+ .debug_macro   0x00002434       0x16 ./template/retarget.o
+ .debug_macro   0x0000244a       0x10 ./template/retarget.o
+ .debug_macro   0x0000245a       0x10 ./template/retarget.o
+ .debug_macro   0x0000246a       0x35 ./template/retarget.o
+ .debug_macro   0x0000249f      0x122 ./template/retarget.o
+ .debug_macro   0x000025c1      0x100 ./lib/StdPeriph_Driver/Sources/gw1ns4c_spi.o
+ .debug_macro   0x000026c1       0x8e ./lib/StdPeriph_Driver/Sources/gw1ns4c_spi.o
+ .debug_macro   0x0000274f      0x100 ./lib/StdPeriph_Driver/Sources/gw1ns4c_timer.o
+ .debug_macro   0x0000284f       0x1c ./lib/StdPeriph_Driver/Sources/gw1ns4c_timer.o
+ .debug_macro   0x0000286b      0x100 ./lib/StdPeriph_Driver/Sources/gw1ns4c_uart.o
+ .debug_macro   0x0000296b       0x76 ./lib/StdPeriph_Driver/Sources/gw1ns4c_uart.o
+ .debug_macro   0x000029e1      0x102 ./lib/CMSIS/DeviceSupport/system/system_gw1ns4c.o
 
 .debug_line     0x00000000     0x25f3
  .debug_line    0x00000000      0x614 ./template/gw1ns4c_it.o

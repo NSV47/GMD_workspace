@@ -5,16 +5,19 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../template/gw1ns4c_it.c \
+../template/hfbeacon.c \
 ../template/main.c \
 ../template/retarget.c 
 
 OBJS += \
 ./template/gw1ns4c_it.o \
+./template/hfbeacon.o \
 ./template/main.o \
 ./template/retarget.o 
 
 C_DEPS += \
 ./template/gw1ns4c_it.d \
+./template/hfbeacon.d \
 ./template/main.d \
 ./template/retarget.d 
 
